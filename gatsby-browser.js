@@ -3,5 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
+import "./src/styles/main.scss"
 
-// You can delete this file if you're not using it
+require("typeface-bowlby-one-sc")
+require("typeface-roboto-slab")

@@ -1,0 +1,35 @@
+// Position
+// ======================================================
+// Example:
+//
+// .class {
+//   @include position(absolute, 10px, 10px, 10px, 10px);
+// }
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Absolute Position Center
+// ======================================================
+// It will center with relative parent
+// Example:
+//
+// .class {
+//   @include absCenter();
+// }
+@mixin absCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

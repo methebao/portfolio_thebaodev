@@ -1,0 +1,35 @@
+// Width !== Height
+// ======================================================
+// Example:
+//
+// .class {
+//   @include size(10px, 20px);
+// }
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// Width === Height
+// ======================================================
+// Example:
+//
+// .class {
+//   @include square(10px);
+// }
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+// Width === Height + Border Radius
+// ======================================================
+// Example:
+//
+// .class {
+//   @include circle(10px);
+// }
+@mixin circle($size) {
+  @include size($size, $size);
+
+  border-radius: 50%;
+}

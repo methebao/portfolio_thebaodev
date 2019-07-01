@@ -1,0 +1,39 @@
+/* ------------------------------------ */
+
+/* RESPOND: MEDIA QUERIES MIXINS  */
+
+/* Following Bulma Breakpoints  */
+
+/* ------------------------------------ */
+
+/*
+	FROM-------------TO----------------DEVICES(Variables)--------
+	0px             768px				        phone *Current Style Applying
+	769px				    1023px					    tablet
+	1024x				    1215px					    desktop
+	1216px				  1407px					    widescreen
+	1408px 				  >~					        fullhd
+*/
+// TODOS: Update comment
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == fulhd {
+    @media (min-width: 88em) {
+      @content;
+    }
+  } @else {
+    $maxWidth: map-get(
+      (
+        phone: 48em,
+        tablet: 63.9375em,
+        desktop: 75.9375em,
+        widescreen: 87.9375em,
+      ),
+      $breakpoint
+    );
+
+    @media (max-width: $maxWidth) {
+      @content;
+    }
+  }
+}

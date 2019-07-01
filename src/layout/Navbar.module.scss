@@ -1,0 +1,38 @@
+.logo-text {
+  font-family: $font-family-logo;
+  font-size: $font-size-large;
+
+  @include flexbox();
+
+  @include align-items(center);
+
+  .content {
+    color: $info;
+    margin: auto 10px;
+  }
+
+  .key {
+    font-size: $font-size-super-large;
+  }
+
+  .name {
+    font-size: $font-size-large;
+  }
+
+  .symbol {
+    color: $white;
+    font-size: $font-size-super-large;
+    font-family: $font-family-base;
+    font-weight: $font-weight-light;
+  }
+}
+
+.menu-custom {
+  box-shadow: none;
+}
+
+.field-custom {
+  @include flexbox();
+
+  @include justify-content(flex-end);
+}

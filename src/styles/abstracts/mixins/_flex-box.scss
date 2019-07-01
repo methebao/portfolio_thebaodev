@@ -1,0 +1,149 @@
+// Flexbox Mixin System
+// ======================================================
+//
+// Display flexbox
+// Example:
+//
+// .class {
+//   @include flexbox();
+// }
+@mixin flexbox() {
+  display: flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+// Example:
+//
+// .class {
+//   @include flex(1);
+// }
+@mixin flex($values) {
+  flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+// Example:
+//
+// .class {
+//   @include flex-direction(row);
+// }
+@mixin flex-direction($direction) {
+  flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+// Example:
+//
+// .class {
+//   @include flex-wrap(wrap);
+// }
+@mixin flex-wrap($wrap) {
+  flex-wrap: $wrap;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+// Example:
+//
+// .class {
+//   @include order(1);
+// }
+@mixin order($val) {
+  order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+// Example:
+//
+// .class {
+//   @include flex-grow(1);
+// }
+@mixin flex-grow($grow) {
+  flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+// Example:
+//
+// .class {
+//   @include flex-shink(0);
+// }
+@mixin flex-shrink($shrink) {
+  flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+// Example:
+//
+// .class {
+//   @include flex-basis(100%);
+// }
+@mixin flex-basis($width) {
+  flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+// Example:
+//
+// .class {
+//   @include justify-content(center);
+// }
+@mixin justify-content($justify) {
+  justify-content: $justify;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+// Example:
+//
+// .class {
+//   @include align-content(flex-start);
+// }
+@mixin align-items($align) {
+  align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+// Example:
+//
+// .class {
+//   @include align-self(flex-start);
+// }
+@mixin align-self($align) {
+  align-self: $align;
+}
+
+// Flex items middle alignment by container
+// - applies to: flex container
+// - flex items inside container will be in middle of container.
+// Example:
+//
+// .class {
+//   @include align-self(flex-start);
+// }
+@mixin middle-items() {
+  @include flexbox();
+
+  @include justify-content(center);
+
+  @include align-items(center);
+}
