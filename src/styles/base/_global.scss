@@ -7,3 +7,9 @@ body {
   font-family: $font-family-base;
   font-weight: $font-weight-base;
 }
+
+p {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}

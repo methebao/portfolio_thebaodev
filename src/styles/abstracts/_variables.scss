@@ -2,19 +2,22 @@
 // Base :: Variables
 // ======================================================
 
-$font-family-base: 'Roboto Slab', 'Arial', serif;
-$font-family-logo: 'Bowlby One SC', 'Roboto Slab', 'Arial', serif;
+$font-family-base: 'Open Sans', 'Lato', 'Arial', serif;
+$font-family-primary: 'Lato', 'Open Sans' 'Arial', serif;
+$font-family-logo: 'Bowlby One SC', 'Lato', 'Arial', serif;
 // >> Font-size
-$font-size-small: .75rem;
-$font-size-base: .875rem;
-$font-size-medium: 1rem;
-$font-size-large: 1.125rem;
-$font-size-super-large: 1.5rem;
+$font-size-small: .8rem;
+$font-size-base: 1rem;
+$font-size-medium: 1.2rem;
+$font-size-medium-large: 1.5rem;
+$font-size-large: 2rem;
+$font-size-super-large: 3rem;
 
 // >> Font-weight
 $font-weight-light: 300;
 $font-weight-base: 400;
 $font-weight-bold: 500;
+$font-weight-heavy: 700;
 
 // Borders
 $border-radius-small: 2px;
@@ -35,3 +38,4 @@ $margin-top-base: 15px;
 $margin-top-large: 25px;
 //Shadows
 $box-shadow-base: 0 1px 5px 0 rgba(0, 0, 0, .05);
+$text-shadow-base: .5px .5px 1px rgba(62, 65, 68, .4);

@@ -6,4 +6,4 @@
 import "./src/styles/main.scss"
 
 require("typeface-bowlby-one-sc")
-require("typeface-roboto-slab")
+require("typeface-lato")

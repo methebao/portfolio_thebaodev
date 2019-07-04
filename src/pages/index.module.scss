@@ -1,0 +1,21 @@
+.custom-box {
+  height: 300rem;
+
+  @include respond(tablet) {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: -5rem;
+  }
+
+  @include respond(desktop) {
+    margin-top: -10rem;
+  }
+
+  small {
+    color: $gray-dark;
+  }
+}
+
+.section-title {
+  padding: 3rem 0;
+}

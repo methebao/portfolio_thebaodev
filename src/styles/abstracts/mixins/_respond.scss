@@ -17,22 +17,22 @@
 // TODOS: Update comment
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == fulhd {
-    @media (min-width: 88em) {
+  @if $breakpoint == phone {
+    @media (max-width: 48em) {
       @content;
     }
   } @else {
-    $maxWidth: map-get(
+    $minWidth: map-get(
       (
-        phone: 48em,
         tablet: 63.9375em,
         desktop: 75.9375em,
         widescreen: 87.9375em,
+        fullhd: 88em,
       ),
       $breakpoint
     );
 
-    @media (max-width: $maxWidth) {
+    @media (min-width: $minWidth) {
       @content;
     }
   }

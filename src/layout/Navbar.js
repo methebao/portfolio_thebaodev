@@ -28,8 +28,8 @@ const NavbarMenu = ({ isActive }) => (
       <div className="navbar-item">
         <div className={`field ${navbarStyles.fieldCustom}`}>
           <p className="control">
-            <a className="button is-white has-text-info" href="#">
-              <span className="icon">
+            <a className="button is-info has-text-white" href="#">
+              <span className="icon has-text-white">
                 <FontAwesomeIcon icon={faDotCircle} />
               </span>
               <span>Talk to me</span>
@@ -45,16 +45,23 @@ const Navbar = () => {
   const [isActive, toggleMenu] = useState(false)
   return (
     <div className="container">
-      <nav className="navbar is-transparent">
+      <nav className={`navbar is-transparent ${navbarStyles.customNavbar}`}>
         <div className="navbar-brand">
           <a className="navbar-item" href="https://bulma.io">
-            <div className={navbarStyles.logoText}>
-              <span className={navbarStyles.symbol}>{`</ `}</span>
-              <span className={navbarStyles.content}>
-                <span className={navbarStyles.name}>{`thebao`}</span>
-                <span className={navbarStyles.key}>{`dev_`}</span>
-              </span>
-              <span className={navbarStyles.symbol}>{` />`}</span>
+            <div className={navbarStyles.logoWrapper}>
+              <div className={navbarStyles.logoText}>
+                <span
+                  className={`${navbarStyles.extra} ${navbarStyles.extraLeft}`}
+                />
+                <span
+                  className={`${navbarStyles.extra} ${navbarStyles.extraRight}`}
+                />
+
+                <span className={navbarStyles.content}>
+                  <span className={navbarStyles.name}>{`thebao`}</span>
+                  <span className={navbarStyles.key}>{`dev`}</span>
+                </span>
+              </div>
             </div>
           </a>
           <NavbarBurger onToggleMenu={() => toggleMenu(!isActive)} />

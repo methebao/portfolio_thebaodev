@@ -6,6 +6,8 @@
   "author": "The Bao Dev<thebao.dev@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-regular-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "bulma": "^0.7.5",
@@ -27,9 +29,12 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-slick": "^0.24.0",
     "react-typography": "^0.16.19",
+    "slick-carousel": "^1.8.1",
     "typeface-bowlby-one-sc": "^0.0.72",
-    "typeface-roboto-slab": "^0.0.72",
+    "typeface-lato": "^0.0.54",
+    "typeface-open-sans": "^0.0.54",
     "typography": "^0.16.19"
   },
   "devDependencies": {

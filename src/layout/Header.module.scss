@@ -1,10 +1,72 @@
+.avatar {
+  text-align: center;
+}
+.avatar-title {
+  color: rgba($info, .6);
+  margin-top: .5rem;
+}
+
 .title {
-  color: rgba($info, .9);
-  font-family: $font-family-logo;
+  color: rgba($white, .9);
+  font-family: $font-family-primary;
   font-size: $font-size-large;
-  margin-bottom: 1rem;
+  font-weight: $font-weight-heavy;
+  text-transform: uppercase;
+  text-shadow: $text-shadow-base;
 }
 
 .sub-title {
+  font-size: $font-size-medium;
   color: rgba($white, .9);
+}
+
+.custom-hero {
+  @include respond(desktop) {
+    height: 100vh;
+  }
+}
+
+.middle-content {
+  margin: auto;
+
+  @include flexbox();
+
+  @include justify-content(center);
+
+  @include respond(desktop) {
+    width: 80%;
+  }
+}
+
+.custom-column-content {
+  margin-top: 1rem;
+
+  @include flexbox();
+
+  @include flex-direction(column);
+
+  @include justify-content(center);
+
+  > * {
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.icons {
+  @include flexbox();
+
+  .icon {
+    font-size: $font-size-medium-large;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.desc {
+  font-size: $font-size-base;
+  text-shadow: $text-shadow-base;
 }
