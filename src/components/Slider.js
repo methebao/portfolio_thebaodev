@@ -11,7 +11,7 @@ const SliderWrapper = ({ children }) => {
     slidesToScroll: 1,
   }
   return (
-    <div class={sliderStyles.sliderWrapper}>
+    <div className={sliderStyles.sliderWrapper}>
       <Slider {...settings}>{children}</Slider>
     </div>
   )
