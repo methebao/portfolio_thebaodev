@@ -14,10 +14,10 @@ const Product = ({ title, subTitle, description, tags }) => {
     <div className={`columns ${productStyles.product}`}>
       <div className="column">
         <div className={productStyles.info}>
-          <h1 className="title is-4 has-text-justified">{title}</h1>
-          <p className="subtitle is-5 has-text-justified">{subTitle}</p>
+          <h1 className="title is-4 has-text-left">{title}</h1>
+          <p className="subtitle is-5 has-text-left">{subTitle}</p>
           <article className="message is-info">
-            <div className="message-body has-text-justified has-text-grey">
+            <div className="message-body has-text-left has-text-grey">
               {description}
             </div>
           </article>

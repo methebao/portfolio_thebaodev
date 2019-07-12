@@ -59,10 +59,8 @@ const Header = ({ siteTitle, subTitle }) => (
                     thinking and annoying bugs.
                   </p>
                   <p>
-                    Let's get started with me who actually love doing these
-                    things and optimizing them everyday. My job is take your
-                    great ideas, your stunning design to pixel perfect and high
-                    performance frontend.
+                    My job is take your great ideas, your stunning design to
+                    pixel perfect and high performance frontend.
                   </p>
                 </div>
               </div>
