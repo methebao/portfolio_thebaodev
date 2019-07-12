@@ -1,0 +1,44 @@
+.footer {
+  color: $gray-dark-1;
+  padding-top: 0;
+}
+
+.quote-wrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quote {
+  font-size: $font-size-medium-large;
+  font-family: $font-family-base;
+  font-weight: $font-weight-light;
+  color: $gray-dark-1;
+
+  strong {
+    display: block;
+    color: inherit;
+    font-family: inherit;
+    font-weight: $font-weight-base;
+  }
+
+  &-icon {
+    color: rgba($color: $gray-dark-1, $alpha: .7);
+    margin-bottom: .5rem;
+    font-size: $font-size-medium;
+  }
+}
+
+.icons {
+  color: $gray-dark-1;
+  font-size: $font-size-large;
+  margin-bottom: 2rem;
+  & > * {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.copy-right {
+  margin-bottom: 1rem;
+}

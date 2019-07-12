@@ -10,6 +10,8 @@ import {
   faFacebook,
   faSkype
 } from "@fortawesome/free-brands-svg-icons";
+import { faMugHot } from "@fortawesome/free-solid-svg-icons";
+import rightVector from "../images/right-vector.svg";
 
 const Header = ({ siteTitle, subTitle }) => (
   <header>
@@ -18,7 +20,7 @@ const Header = ({ siteTitle, subTitle }) => (
         <Navbar />
       </div>
       <div className="hero-body">
-        <div className="container">
+        <div className={`container ${headerStyles.customContainer}`}>
           <div className={headerStyles.middleContent}>
             <div className="columns">
               <div className="column is-one-third">
@@ -26,9 +28,7 @@ const Header = ({ siteTitle, subTitle }) => (
                   <img src={avatar} alt="The Bao Dev" />
                   <p className={headerStyles.avatarTitle}>
                     Passion, dedication, and a lot of coffee{" "}
-                    <span role="img" aria-label="Coffee">
-                      ☕️
-                    </span>
+                    <FontAwesomeIcon icon={faMugHot} />
                   </p>
                 </div>
               </div>
@@ -58,15 +58,16 @@ const Header = ({ siteTitle, subTitle }) => (
                     attention and motivate them to take next action without
                     thinking and annoying bugs.
                   </p>
-                  <p>
-                    Let's get started with me who actually love doing these
-                    things and optimizing them everyday. My job is take your
-                    great ideas, your stunning design to pixel perfect and high
-                    performance frontend.
-                  </p>
                 </div>
               </div>
             </div>
+          </div>
+          <div className={headerStyles.vectors}>
+            <img
+              src={rightVector}
+              className={headerStyles.rightVector}
+              alt="frontend development"
+            />
           </div>
         </div>
       </div>
@@ -81,7 +82,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   siteTitle: `Engage your audiences with modern frontend UI/UX`,
-  subTitle: `with a Professional Frontend Developer`
+  subTitle: `by a Professional Frontend Developer`
 };
 
 export default Header;

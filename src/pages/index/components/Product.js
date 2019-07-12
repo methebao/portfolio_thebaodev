@@ -1,24 +1,34 @@
 import React from "react";
+import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import productStyles from "./Product.module.scss";
 import Tag from "./Tag";
 import BrowserMockup from "src/components/BrowserMockup";
-
-const Product = ({ title, subTitle, description, tags }) => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-regular-svg-icons";
+const Product = ({ title, description, content, tags, imageData }) => {
   const renderTags = tags => {
     return tags.map(({ name, content, state }, index) => {
       return <Tag key={index} name={name} content={content} state={state} />;
     });
   };
+  const addLineBreaks = string =>
+    string.split("\n").map((text, index) => (
+      <React.Fragment key={`${text}-${index}`}>
+        <FontAwesomeIcon icon={faCircle} /> {text}
+        <br />
+      </React.Fragment>
+    ));
+
   return (
     <div className={`columns ${productStyles.product}`}>
       <div className="column">
         <div className={productStyles.info}>
-          <h1 className="title is-4 has-text-justified">{title}</h1>
-          <p className="subtitle is-5 has-text-justified">{subTitle}</p>
+          <h1 className="title is-4 has-text-left">{title}</h1>
+          <p className="subtitle is-5 has-text-left">{description}</p>
           <article className="message is-info">
-            <div className="message-body has-text-justified has-text-grey">
-              {description}
+            <div className="message-body has-text-left has-text-grey">
+              {addLineBreaks(content)}
             </div>
           </article>
           <div className="field is-grouped is-grouped-multiline">
@@ -28,12 +38,7 @@ const Product = ({ title, subTitle, description, tags }) => {
       </div>
       <div className="column">
         <BrowserMockup>
-          <figure className="image is-4by3">
-            <img
-              src="https://bulma.io/images/placeholders/128x128.png"
-              alt={title}
-            />
-          </figure>
+          <Img sizes={imageData} alt={title} />
         </BrowserMockup>
       </div>
     </div>
@@ -42,15 +47,15 @@ const Product = ({ title, subTitle, description, tags }) => {
 
 Product.propTypes = {
   title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired
 };
 
 Product.defaultProps = {
   title: "Product Title Sample",
-  subTitle: "Product description sample",
-  description:
+  description: "Product description sample",
+  content:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aut vitae rerum odio sequi culpa, magni aspernatur minima fugiat ullam, deleniti libero! Voluptatibus sit aliquid molestiae excepturi esse eius quos.",
   tags: [
     {

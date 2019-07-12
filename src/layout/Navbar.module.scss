@@ -1,54 +1,6 @@
 .custom-navbar {
   padding: 20px 0;
 }
-.logo-wrapper {
-  position: relative;
-  z-index: 10;
-}
-.logo-text {
-  font-family: $font-family-logo;
-  font-size: $font-size-large;
-  transform: skew(-15deg, 0deg);
-
-  @include flexbox();
-
-  @include align-items(center);
-
-  @include position(relative);
-
-  .content {
-    background-color: $white;
-    color: $primary;
-    margin: auto 10px;
-    padding: 5px 10px;
-    border-radius: $border-radius-base;
-  }
-
-  .key {
-    font-size: $font-size-super-large;
-  }
-
-  .name {
-    font-size: $font-size-large;
-  }
-  .extra {
-    background-color: $info;
-    border-radius: $border-radius-base;
-    opacity: .4;
-    transform: skew(-5deg, 0deg);
-    z-index: -1;
-
-    @include size(30px, 25px);
-
-    &-right {
-      @include position(absolute, -6px, 2px, null, null);
-    }
-
-    &-left {
-      @include position(absolute, null, null, -6px, 2px);
-    }
-  }
-}
 
 .menu-custom {
   box-shadow: none;

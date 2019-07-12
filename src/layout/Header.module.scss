@@ -1,6 +1,7 @@
 .avatar {
   text-align: center;
 }
+
 .avatar-title {
   color: rgba($info, .6);
   margin-top: .5rem;
@@ -21,9 +22,15 @@
 }
 
 .custom-hero {
+  @include position(relative);
+
   @include respond(desktop) {
     height: 100vh;
   }
+}
+
+.custom-container {
+  position: static;
 }
 
 .middle-content {
@@ -69,4 +76,11 @@
 .desc {
   font-size: $font-size-base;
   text-shadow: $text-shadow-base;
+}
+
+.right-vector {
+  height: 40%;
+  opacity: .4;
+
+  @include position(absolute, null, 0, 0, null);
 }

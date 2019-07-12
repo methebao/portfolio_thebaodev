@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
 import navbarStyles from "./Navbar.module.scss";
 import Button, { ButtonTypes } from "../components/Button";
+import Logo, { LogoContentTypes } from "../components/Logo";
 
 const NavbarBurger = ({ onToggleMenu }) => (
   <a
@@ -50,21 +51,7 @@ const Navbar = () => {
       <nav className={`navbar is-transparent ${navbarStyles.customNavbar}`}>
         <div className="navbar-brand">
           <a className="navbar-item" href="https://bulma.io">
-            <div className={navbarStyles.logoWrapper}>
-              <div className={navbarStyles.logoText}>
-                <span
-                  className={`${navbarStyles.extra} ${navbarStyles.extraLeft}`}
-                />
-                <span
-                  className={`${navbarStyles.extra} ${navbarStyles.extraRight}`}
-                />
-
-                <span className={navbarStyles.content}>
-                  <span className={navbarStyles.name}>{`thebao`}</span>
-                  <span className={navbarStyles.key}>{`dev`}</span>
-                </span>
-              </div>
-            </div>
+            <Logo state={LogoContentTypes.PRIMARY} />
           </a>
           <NavbarBurger onToggleMenu={() => toggleMenu(!isActive)} />
         </div>
