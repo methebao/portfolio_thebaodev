@@ -1,9 +1,12 @@
-import React from "react"
-import bulmaLogo from "../images/made-with-bulma.png"
+import React from "react";
+import bulmaLogo from "../images/made-with-bulma.png";
 const Footer = () => (
   <footer className="section has-background-primary has-text-centered">
-    <div className="container">
-      Handcrafted by me © <a href="https://www.gatsbyjs.org">Gatsby</a>
+    <div className="container has-text-black">
+      Handcrafted by me ©
+      <a className="has-text-info" href="https://thebaodev.me">
+        thebaoDEV_
+      </a>
     </div>
     <div className="made-with-bulma">
       <a href="https://bulma.io">
@@ -11,6 +14,6 @@ const Footer = () => (
       </a>
     </div>
   </footer>
-)
+);
 
-export default Footer
+export default Footer;

@@ -1,0 +1,36 @@
+.featured-box {
+  height: 20em;
+  width: 100%;
+  border-radius: $border-radius-base;
+  box-shadow: 9px 15px 34px -15px rgba(0, 0, 0, .6);
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+
+  &.service {
+    background-image: url('src/images/service-background.jpg');
+    background-image: linear-gradient(
+      86deg,
+      rgba($primary, .5) 0%,
+      rgba($primary, .9) 100%
+    ),
+      url('src/images/service-background.jpg');
+  }
+
+  &.blog {
+    background-image: url('src/images/blog-background.jpg');
+    background-image: linear-gradient(
+      86deg,
+      rgba($primary, .9) 0%,
+      rgba($primary, .5) 100%
+    ),
+      url('src/images/blog-background.jpg');
+  }
+
+  .inner {
+    width: 100%;
+    height: 50%;
+    text-align: left;
+    padding: 2rem;
+  }
+}

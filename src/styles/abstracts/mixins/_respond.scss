@@ -24,10 +24,10 @@
   } @else {
     $minWidth: map-get(
       (
-        tablet: 63.9375em,
-        desktop: 75.9375em,
-        widescreen: 87.9375em,
-        fullhd: 88em,
+        tablet: 48.0625em,
+        desktop: 64em,
+        widescreen: 76em,
+        fullhd: 88em
       ),
       $breakpoint
     );

@@ -1,15 +1,15 @@
-import PropTypes from "prop-types"
-import React from "react"
-import Navbar from "./Navbar"
-import avatar from "../images/avatar.svg"
-import headerStyles from "./Header.module.scss"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import PropTypes from "prop-types";
+import React from "react";
+import Navbar from "./Navbar";
+import avatar from "../images/avatar.svg";
+import headerStyles from "./Header.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faGithub,
   faFacebook,
-  faSkype,
-} from "@fortawesome/free-brands-svg-icons"
+  faSkype
+} from "@fortawesome/free-brands-svg-icons";
 
 const Header = ({ siteTitle, subTitle }) => (
   <header>
@@ -25,7 +25,10 @@ const Header = ({ siteTitle, subTitle }) => (
                 <div className={headerStyles.avatar}>
                   <img src={avatar} alt="The Bao Dev" />
                   <p className={headerStyles.avatarTitle}>
-                    Passion, dedication, and a lot of coffee ☕️
+                    Passion, dedication, and a lot of coffee{" "}
+                    <span role="img" aria-label="Coffee">
+                      ☕️
+                    </span>
                   </p>
                 </div>
               </div>
@@ -69,16 +72,16 @@ const Header = ({ siteTitle, subTitle }) => (
       </div>
     </section>
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  subTitle: PropTypes.string,
-}
+  subTitle: PropTypes.string
+};
 
 Header.defaultProps = {
   siteTitle: `Engage your audiences with modern frontend UI/UX`,
-  subTitle: `with a Professional Frontend Developer`,
-}
+  subTitle: `with a Professional Frontend Developer`
+};
 
-export default Header
+export default Header;

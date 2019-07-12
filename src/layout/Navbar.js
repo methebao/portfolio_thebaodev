@@ -1,10 +1,12 @@
-import React, { useState } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faDownload, faDotCircle } from "@fortawesome/free-solid-svg-icons"
-import navbarStyles from "./Navbar.module.scss"
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
+import navbarStyles from "./Navbar.module.scss";
+import Button, { ButtonTypes } from "../components/Button";
 
 const NavbarBurger = ({ onToggleMenu }) => (
   <a
+    href="#"
     role="button"
     className="navbar-burger"
     data-target="navMenu"
@@ -16,7 +18,7 @@ const NavbarBurger = ({ onToggleMenu }) => (
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
   </a>
-)
+);
 
 const NavbarMenu = ({ isActive }) => (
   <div
@@ -28,21 +30,21 @@ const NavbarMenu = ({ isActive }) => (
       <div className="navbar-item">
         <div className={`field ${navbarStyles.fieldCustom}`}>
           <p className="control">
-            <a className="button is-info has-text-white" href="#">
+            <Button state={ButtonTypes.CTA}>
               <span className="icon has-text-white">
                 <FontAwesomeIcon icon={faDotCircle} />
               </span>
               <span>Talk to me</span>
-            </a>
+            </Button>
           </p>
         </div>
       </div>
     </div>
   </div>
-)
+);
 
 const Navbar = () => {
-  const [isActive, toggleMenu] = useState(false)
+  const [isActive, toggleMenu] = useState(false);
   return (
     <div className="container">
       <nav className={`navbar is-transparent ${navbarStyles.customNavbar}`}>
@@ -69,7 +71,7 @@ const Navbar = () => {
         <NavbarMenu isActive={isActive} />
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

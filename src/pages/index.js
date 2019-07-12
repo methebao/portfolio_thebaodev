@@ -1,10 +1,12 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Layout from "../layout/Layout"
-import SEO from "../layout/SEO"
-import indexStyle from "./index.module.scss"
-import SimpleSlider from "../components/Slider"
-import Product from "./index/components/Product"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Layout from "../layout/Layout";
+import SEO from "../layout/SEO";
+import indexStyle from "./index.module.scss";
+import SimpleSlider from "../components/Slider";
+import Product from "./index/components/Product";
+import Button, { ButtonTypes } from "../components/Button";
+import FeaturedBox, { FeaturedBoxTypes } from "./index/components/FeaturedBox";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -17,18 +19,18 @@ const IndexPage = () => {
         }
       }
     }
-  `)
+  `);
   const {
     contentfulBlog: {
       title,
       path,
-      content: { content },
-    },
-  } = data
+      content: { content }
+    }
+  } = data;
   return (
     <Layout>
       <SEO title="Home" />
-      <section>
+      <section className="section">
         <div className="container">
           <div className={`box ${indexStyle.customBox}`}>
             <div className={`has-text-centered ${indexStyle.sectionTitle}`}>
@@ -41,12 +43,51 @@ const IndexPage = () => {
                 <Product />
                 <Product />
               </SimpleSlider>
+              <div className={indexStyle.cta}>
+                <h3 className="has-text-weight-semibold is-uppercase">
+                  Want to build an app?
+                </h3>
+                <div className={`${indexStyle.buttonGroup}`}>
+                  <Button state={ButtonTypes.PRIMARY}> Contact me</Button>
+                  <Button state={ButtonTypes.INFO}> View Resume</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container has-text-centered">
+          <h3 className="heading-tertiary">More from thebaoDEV</h3>
+          <div className={`columns ${indexStyle.customColumns}`}>
+            <div className="column">
+              <FeaturedBox state={FeaturedBoxTypes.SERVICE}>
+                <h2 className="heading-secondary heading-secondary--white heading-secondary--strong">
+                  Services
+                </h2>
+                <br />
+                <p className="description description--white">
+                  Let's make some awesome things !
+                </p>
+              </FeaturedBox>
+            </div>
+            <div className="column">
+              <FeaturedBox state={FeaturedBoxTypes.BLOG}>
+                <h2 className="heading-secondary heading-secondary--white heading-secondary--strong">
+                  A Dev Life
+                </h2>
+                <br />
+                <p className="description description--white">
+                  Programming blog. Contain programming language. Not safe for
+                  kids.
+                </p>
+              </FeaturedBox>
             </div>
           </div>
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

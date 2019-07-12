@@ -3,7 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-import "./src/styles/main.scss"
+import "./src/styles/main.scss";
 
-require("typeface-bowlby-one-sc")
-require("typeface-lato")
+require("typeface-bowlby-one-sc");
+require("typeface-exo");
+require("typeface-open-sans");
