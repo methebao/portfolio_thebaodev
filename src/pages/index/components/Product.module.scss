@@ -1,5 +1,13 @@
 .product {
-  padding: 2rem 0;
-  margin-left: 0;
-  margin-right: 0;
+  height: 100%;
+  margin: 1rem;
+  padding: .5rem;
+  border-radius: $border-radius-base;
+  border: $border-base;
+  .title {
+    font-family: $font-family-primary;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

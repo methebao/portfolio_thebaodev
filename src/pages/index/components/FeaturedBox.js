@@ -27,7 +27,7 @@ const AnimatedFeaturedBox = posed.div({
   }
 });
 
-const FeaturedBox = ({ children, state }) => {
+const FeaturedBox = ({ children, state, onBoxPressed }) => {
   const typeClass = (state => {
     switch (state) {
       case FeaturedBoxTypes.SERVICE:
@@ -41,6 +41,7 @@ const FeaturedBox = ({ children, state }) => {
   return (
     <AnimatedFeaturedBox
       className={`${featuredBoxStyles.featuredBox} ${typeClass}`}
+      onClick={onBoxPressed}
     >
       <div className={featuredBoxStyles.inner}>{children}</div>
     </AnimatedFeaturedBox>

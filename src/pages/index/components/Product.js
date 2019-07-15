@@ -12,25 +12,22 @@ const Product = ({ title, description, content, tags, imageData }) => {
       return <Tag key={index} name={name} content={content} state={state} />;
     });
   };
-  const addLineBreaks = string =>
+  const splitString = string =>
     string.split("\n").map((text, index) => (
-      <React.Fragment key={`${text}-${index}`}>
-        <FontAwesomeIcon icon={faCircle} /> {text}
-        <br />
-      </React.Fragment>
+      <article key={`${text}-${index}`} className="box is-gray">
+        <div className=" has-text-left">{text}</div>
+      </article>
     ));
 
   return (
     <div className={`columns ${productStyles.product}`}>
       <div className="column">
         <div className={productStyles.info}>
-          <h1 className="title is-4 has-text-left">{title}</h1>
-          <p className="subtitle is-5 has-text-left">{description}</p>
-          <article className="message is-info">
-            <div className="message-body has-text-left has-text-grey">
-              {addLineBreaks(content)}
-            </div>
-          </article>
+          <h1 className={`title is-4 has-text-left ${productStyles.title}`}>
+            {title}
+          </h1>
+          <p className="subtitle is-6 has-text-left">{description}</p>
+          {splitString(content)}
           <div className="field is-grouped is-grouped-multiline">
             {renderTags(tags)}
           </div>

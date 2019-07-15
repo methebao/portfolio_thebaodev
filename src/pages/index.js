@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../layout/Layout";
 import SEO from "../layout/SEO";
@@ -10,6 +10,9 @@ import FeaturedBox, { FeaturedBoxTypes } from "./index/components/FeaturedBox";
 import Service from "./index/components/Service";
 import CTABox from "./index/components/CTABox";
 
+import ServiceSection from "./index/components/ServiceSection";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query ProductQuery {
@@ -41,7 +44,6 @@ const IndexPage = () => {
   const products = data.allContentfulProduct.edges.map(item => {
     return item.node;
   });
-  debugger;
   const renderProducts = () => {
     return products.map(product => (
       <Product
@@ -54,6 +56,8 @@ const IndexPage = () => {
       />
     ));
   };
+
+  const [isServiceEnable, setIsServiceEnable] = useState(false);
 
   return (
     <Layout>
@@ -83,7 +87,13 @@ const IndexPage = () => {
           <h3 className="heading-tertiary">More from thebaoDEV</h3>
           <div className={`columns ${indexStyles.customColumns}`}>
             <div className="column">
-              <FeaturedBox state={FeaturedBoxTypes.SERVICE}>
+              <FeaturedBox
+                state={FeaturedBoxTypes.SERVICE}
+                onBoxPressed={() => {
+                  debugger;
+                  setIsServiceEnable(!isServiceEnable);
+                }}
+              >
                 <h2 className="heading-secondary heading-secondary--white heading-secondary--strong">
                   Services
                 </h2>
@@ -108,19 +118,24 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
-      <section className={`section is-primary ${indexStyles.serviceSection}`}>
-        <div className="container">
-          <div className="columns">
-            <div className="column">
-              <Service />
-            </div>
-            <div className="column">
-              <Service />
-            </div>
-            <div className="column">
-              <Service />
-            </div>
+
+      <section
+        className={`section is-primary ${indexStyles.servicesBackground}`}
+        onClick={() => {
+          setIsServiceEnable(!isServiceEnable);
+        }}
+      >
+        {!isServiceEnable && (
+          <div className={indexStyles.servicesIconWrapper}>
+            <FontAwesomeIcon
+              icon={faAngleDoubleDown}
+              className={indexStyles.servicesMoreIcon}
+            />
           </div>
+        )}
+
+        <div className="container">
+          <ServiceSection isVisible={isServiceEnable} />
         </div>
       </section>
       <section

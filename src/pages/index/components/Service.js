@@ -1,41 +1,62 @@
 import React from "react";
+import PropTypes from "prop-types";
 import serviceStyles from "./Service.module.scss";
-const Service = ({}) => {
-  return (
-    <div class={`card ${serviceStyles.card}`}>
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img
-            src="https://bulma.io/images/placeholders/1280x960.png"
-            alt="Placeholder image"
-          />
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img
-                src="https://bulma.io/images/placeholders/96x96.png"
-                alt="Placeholder image"
-              />
-              >
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title is-4">John Smith</p>
-            <p class="subtitle is-6">@johnsmith</p>
-          </div>
-        </div>
+import ServiceDesc from "./ServiceDesc";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-          iaculis mauris. <a>@bulmaio</a>.<a href="#">#css</a>{" "}
-          <a href="#">#responsive</a>
+const Service = ({ items, isPrimary }) => {
+  const renderItems = () => {
+    return items.map(item => <ServiceDesc content={item} />);
+  };
+  return (
+    <div
+      class={`card ${serviceStyles.card} ${isPrimary &&
+        serviceStyles.cardPrimary}`}
+    >
+      {isPrimary && (
+        <div className={serviceStyles.iconWrapper}>
+          <FontAwesomeIcon icon={faTrophy} className={serviceStyles.icon} />
         </div>
+      )}
+      <div class="card-content">
+        <div className={serviceStyles.titleWrapper}>
+          <h3
+            className={`${serviceStyles.title} ${isPrimary &&
+              serviceStyles.titlePrimary} ${serviceStyles.titleMain}`}
+          >
+            Title
+          </h3>
+          <h3
+            className={`${serviceStyles.title} ${isPrimary &&
+              serviceStyles.titlePrimary} ${serviceStyles.titleSub}`}
+          >
+            Sub Title
+          </h3>
+        </div>
+        <div class="content">{renderItems()}</div>
       </div>
     </div>
   );
 };
 
+Service.propTypes = {
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string.isRequired,
+  isPrimary: PropTypes.bool.isRequired,
+  items: PropTypes.array.isRequired
+};
+
+Service.defaultProps = {
+  title: "Product Title Sample",
+  subTitle: "Product description sample",
+  isPrimary: false,
+  items: [
+    "Item Content",
+    "Item Content",
+    "Item Content",
+    "Item Content",
+    "Item Content"
+  ]
+};
 export default Service;
