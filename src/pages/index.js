@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../layout/Layout";
 import SEO from "../layout/SEO";
@@ -7,7 +7,9 @@ import SimpleSlider from "../components/Slider";
 import Product from "./index/components/Product";
 import Button, { ButtonTypes } from "../components/Button";
 import FeaturedBox, { FeaturedBoxTypes } from "./index/components/FeaturedBox";
-
+import ServiceSection from "./index/components/ServiceSection";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query HomePage {
@@ -27,6 +29,9 @@ const IndexPage = () => {
       content: { content }
     }
   } = data;
+
+  const [isServiceEnable, setIsServiceEnable] = useState(false);
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -61,7 +66,13 @@ const IndexPage = () => {
           <h3 className="heading-tertiary">More from thebaoDEV</h3>
           <div className={`columns ${indexStyle.customColumns}`}>
             <div className="column">
-              <FeaturedBox state={FeaturedBoxTypes.SERVICE}>
+              <FeaturedBox
+                state={FeaturedBoxTypes.SERVICE}
+                onBoxPressed={() => {
+                  debugger;
+                  setIsServiceEnable(!isServiceEnable);
+                }}
+              >
                 <h2 className="heading-secondary heading-secondary--white heading-secondary--strong">
                   Services
                 </h2>
@@ -84,6 +95,25 @@ const IndexPage = () => {
               </FeaturedBox>
             </div>
           </div>
+        </div>
+      </section>
+      <section
+        className={`section is-primary ${indexStyle.servicesBackground}`}
+        onClick={() => {
+          setIsServiceEnable(!isServiceEnable);
+        }}
+      >
+        {!isServiceEnable && (
+          <div className={indexStyle.servicesIconWrapper}>
+            <FontAwesomeIcon
+              icon={faAngleDoubleDown}
+              className={indexStyle.servicesMoreIcon}
+            />
+          </div>
+        )}
+
+        <div className="container">
+          <ServiceSection isVisible={isServiceEnable} />
         </div>
       </section>
     </Layout>

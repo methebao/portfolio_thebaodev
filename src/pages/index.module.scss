@@ -65,3 +65,22 @@
     padding: 0 10rem;
   }
 }
+
+.services-background {
+  cursor: pointer;
+  margin-bottom: 2rem;
+  border-radius: $border-radius-base;
+  background-image: linear-gradient(rgba(0, 0, 0, .63), rgba(0, 0, 0, .795)),
+    url('src/images/services-background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.services-icon-wrapper {
+  text-align: center;
+}
+
+.services-more-icon {
+  font-size: $font-size-super-large;
+  color: rgba($white, .6);
+}
