@@ -17,7 +17,7 @@ const CTABox = () => {
         <div className="column level-item">
           <a
             className="button is-white is-outlined is-rounded is-medium"
-            href="/project-planner"
+            href="mailto:thebao.dev@gmail.com?subject=[FROM_Porfolio]"
           >
             Get in touch
           </a>

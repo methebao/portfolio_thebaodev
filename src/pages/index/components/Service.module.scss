@@ -1,10 +1,20 @@
 .card {
-  background-color: $info;
+  cursor: pointer;
+  background-color: rgba($info, .8);
   color: $white;
   border-radius: $border-radius-base;
+  box-shadow: $box-shadow-service;
+  margin: 1rem;
 
   &-primary {
     background-color: $warning;
+  }
+  .main-icon-wrapper {
+    padding-left: 2.5rem;
+    padding-top: 2.5rem;
+    .main-icon {
+      @include square(100px);
+    }
   }
 
   .icon-wrapper {
@@ -19,7 +29,7 @@
   }
 
   .title-wrapper {
-    color: $white;
+    color: $gray-light;
     padding: 1rem;
 
     .title {
@@ -29,7 +39,7 @@
       padding-right: 2rem;
       background-image: linear-gradient(
         130deg,
-        rgba($info, 1) 95%,
+        transparent 95%,
         rgba($warning, .5) 95%
       );
 
@@ -37,7 +47,7 @@
         color: $gray-dark-1;
         background-image: linear-gradient(
           130deg,
-          rgba($white, 1) 95%,
+          rgba($white, .7) 95%,
           rgba($info, .5) 95%
         );
       }
@@ -49,8 +59,9 @@
         text-transform: uppercase;
       }
       &-sub {
-        font-size: $font-size-medium;
-        font-weight: $font-weight-bold;
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
       }
     }
   }

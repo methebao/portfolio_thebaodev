@@ -30,12 +30,13 @@
 }
 
 .button-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   margin-top: 1rem;
+
+  @include middle-items();
+
+  @include flex-direction(column);
+
+  @include flex-wrap(wrap);
 
   & > * {
     &:not(:last-child) {
@@ -54,7 +55,6 @@
 }
 
 .custom-columns {
-  padding: 0 2rem;
   margin-top: 2rem;
 
   @include respond(tablet) {
@@ -71,7 +71,6 @@
 }
 
 .services-background {
-  cursor: pointer;
   margin-bottom: 8rem;
   border-radius: $border-radius-base;
   background-image: linear-gradient(rgba(0, 0, 0, .63), rgba(0, 0, 0, .795)),
@@ -80,11 +79,18 @@
   background-attachment: fixed;
 }
 
-.services-icon-wrapper {
-  text-align: center;
+.sub-title {
+  text-transform: initial;
+  margin-top: 1rem;
+  color: $gray-light;
+  font-weight: $font-weight-base;
+  font-size: $font-size-base;
+  display: block;
+  font-style: italic;
 }
 
-.services-more-icon {
-  font-size: $font-size-super-large;
-  color: rgba($white, .6);
+.parallax-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20vh;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import Layout from "../layout/Layout";
 import SEO from "../layout/SEO";
 import indexStyles from "./index.module.scss";
@@ -7,12 +8,10 @@ import SimpleSlider from "../components/Slider";
 import Product from "./index/components/Product";
 import Button, { ButtonTypes } from "../components/Button";
 import FeaturedBox, { FeaturedBoxTypes } from "./index/components/FeaturedBox";
-import Service from "./index/components/Service";
 import CTABox from "./index/components/CTABox";
-
+import MoreBox from "./index/components/MoreBox";
 import ServiceSection from "./index/components/ServiceSection";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query ProductQuery {
@@ -35,6 +34,7 @@ const IndexPage = () => {
               state
               name
             }
+            url
           }
         }
       }
@@ -53,6 +53,7 @@ const IndexPage = () => {
         content={product.content.content}
         imageData={product.thumbnail.sizes}
         tags={product.tags}
+        url={product.url}
       />
     ));
   };
@@ -62,7 +63,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className="section">
+      <section className="section no-padding">
         <div className="container">
           <div className={`box ${indexStyles.customBox}`}>
             <div className={`has-text-centered ${indexStyles.sectionTitle}`}>
@@ -74,7 +75,10 @@ const IndexPage = () => {
                   Want to build an app?
                 </h3>
                 <div className={`${indexStyles.buttonGroup}`}>
-                  <Button state={ButtonTypes.PRIMARY}> Contact me</Button>
+                  <AnchorLink href="#cta-section">
+                    <Button state={ButtonTypes.PRIMARY}> Contact me</Button>
+                  </AnchorLink>
+
                   <Button state={ButtonTypes.INFO}> View Resume</Button>
                 </div>
               </div>
@@ -90,7 +94,6 @@ const IndexPage = () => {
               <FeaturedBox
                 state={FeaturedBoxTypes.SERVICE}
                 onBoxPressed={() => {
-                  debugger;
                   setIsServiceEnable(!isServiceEnable);
                 }}
               >
@@ -121,24 +124,28 @@ const IndexPage = () => {
 
       <section
         className={`section is-primary ${indexStyles.servicesBackground}`}
-        onClick={() => {
-          setIsServiceEnable(!isServiceEnable);
-        }}
       >
-        {!isServiceEnable && (
-          <div className={indexStyles.servicesIconWrapper}>
-            <FontAwesomeIcon
-              icon={faAngleDoubleDown}
-              className={indexStyles.servicesMoreIcon}
-            />
-          </div>
-        )}
+        <div className="has-text-centered">
+          <h2 className={`heading-secondary has-text-white`}>
+            Take a look with awesome services
+            <span className={indexStyles.subTitle}>
+              The great point is that I can be flexible according to your
+              requirements and schedule
+            </span>
+          </h2>
+        </div>
+
+        <MoreBox
+          isVisible={isServiceEnable}
+          onPressed={() => setIsServiceEnable(!isServiceEnable)}
+        />
 
         <div className="container">
           <ServiceSection isVisible={isServiceEnable} />
         </div>
       </section>
       <section
+        id="cta-section"
         className={`section is-primary has-text-centered ${indexStyles.callToAction}`}
       >
         <div className="container is-narrow">

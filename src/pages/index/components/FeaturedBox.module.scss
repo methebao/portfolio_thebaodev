@@ -4,8 +4,11 @@
   border-radius: $border-radius-base;
   box-shadow: 9px 15px 34px -15px rgba(0, 0, 0, .6);
   background-size: cover;
-  display: flex;
-  align-items: flex-end;
+  cursor: pointer;
+
+  @include flexbox();
+
+  @include align-items(flex-end);
 
   &.service {
     background-image: url('src/images/service-background.jpg');

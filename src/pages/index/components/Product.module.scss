@@ -10,4 +10,17 @@
   &:last-child {
     margin-bottom: 0;
   }
+  &:not(.is-desktop) {
+    @include respond(tablet) {
+      display: block;
+    }
+
+    @include respond(desktop) {
+      @include flexbox();
+    }
+  }
+}
+
+.view-demo-button {
+  padding: 2rem;
 }

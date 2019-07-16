@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
 import navbarStyles from "./Navbar.module.scss";
@@ -31,12 +33,14 @@ const NavbarMenu = ({ isActive }) => (
       <div className="navbar-item">
         <div className={`field ${navbarStyles.fieldCustom}`}>
           <p className="control">
-            <Button state={ButtonTypes.CTA}>
-              <span className="icon has-text-white">
-                <FontAwesomeIcon icon={faDotCircle} />
-              </span>
-              <span>Talk to me</span>
-            </Button>
+            <AnchorLink href="#cta-section">
+              <Button state={ButtonTypes.CTA}>
+                <span className="icon has-text-white">
+                  <FontAwesomeIcon icon={faDotCircle} />
+                </span>
+                <span>Talk to me</span>
+              </Button>
+            </AnchorLink>
           </p>
         </div>
       </div>
@@ -50,7 +54,7 @@ const Navbar = () => {
     <div className="container">
       <nav className={`navbar is-transparent ${navbarStyles.customNavbar}`}>
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
+          <a className="navbar-item" href="/">
             <Logo state={LogoContentTypes.PRIMARY} />
           </a>
           <NavbarBurger onToggleMenu={() => toggleMenu(!isActive)} />

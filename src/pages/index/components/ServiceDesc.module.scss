@@ -1,6 +1,7 @@
 .box {
   padding: .5rem;
   text-align: center;
+  opacity: .9;
 
   &:not(:last-child) {
     border-bottom: $border-base;

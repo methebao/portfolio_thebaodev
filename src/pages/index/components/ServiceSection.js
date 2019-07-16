@@ -1,4 +1,6 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+
 import posed, { PoseGroup } from "react-pose";
 import Service from "./Service";
 import serviceSectionStyles from "./ServiceSection.module.scss";
@@ -21,25 +23,56 @@ const AnimatedServiceSection = posed.div({
 });
 
 const ServiceSection = ({ isVisible }) => {
+  const data = useStaticQuery(graphql`
+    query ServiceQuery {
+      allContentfulServices {
+        edges {
+          node {
+            id
+            title
+            isPrimary
+            description
+            content {
+              content
+            }
+            sectionOrder
+          }
+        }
+      }
+    }
+  `);
+  const services = data.allContentfulServices.edges.map(item => {
+    return item.node;
+  });
+  const renderColumns = () => {
+    return services.map(
+      ({ id, title, isPrimary, description, content, sectionOrder }) => {
+        return (
+          <div
+            style={{ order: `${sectionOrder}` }}
+            className="column is-half-tablet is-flex"
+          >
+            <Service
+              key={id}
+              title={title}
+              subTitle={description}
+              items={content}
+              isPrimary={isPrimary}
+              sectionOrder={sectionOrder}
+            />
+          </div>
+        );
+      }
+    );
+  };
   return (
     <PoseGroup>
       {isVisible && [
         <AnimatedServiceSection
           key="services"
-          className={`columns ${serviceSectionStyles.services}`}
+          className={`columns is-multiline ${serviceSectionStyles.services}`}
         >
-          <div className="column">
-            <Service />
-          </div>
-          <div className="column">
-            <Service />
-          </div>
-          <div className="column">
-            <Service isPrimary={true} />
-          </div>
-          <div className="column">
-            <Service />
-          </div>
+          {renderColumns()}
         </AnimatedServiceSection>
       ]}
     </PoseGroup>

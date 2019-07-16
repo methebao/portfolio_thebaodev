@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import browserMockupStyles from "./BrowserMockup.module.scss";
-import defaultImage from "src/images/default-Image.svg";
+import defaultImage from "src/images/default-image.svg";
 
 const DefaultChildren = () => <img src={defaultImage} alt="TheBaoDev" />;
 

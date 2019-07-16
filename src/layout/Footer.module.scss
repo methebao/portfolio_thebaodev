@@ -32,6 +32,16 @@
   color: $gray-dark-1;
   font-size: $font-size-large;
   margin-bottom: 2rem;
+
+  a {
+    color: inherit;
+    transition: all .2s;
+
+    &:hover {
+      color: $info;
+    }
+  }
+
   & > * {
     &:not(:last-child) {
       margin-right: 2rem;

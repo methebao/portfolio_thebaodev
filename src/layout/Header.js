@@ -10,12 +10,11 @@ import {
   faFacebook,
   faSkype
 } from "@fortawesome/free-brands-svg-icons";
-import { faMugHot } from "@fortawesome/free-solid-svg-icons";
 import rightVector from "../images/right-vector.svg";
 
 const Header = ({ siteTitle, subTitle }) => (
   <header>
-    <section className={`hero is-primary is-medium ${headerStyles.customHero}`}>
+    <section className={`hero is-medium ${headerStyles.customHero}`}>
       <div className="hero-head">
         <Navbar />
       </div>
@@ -27,8 +26,7 @@ const Header = ({ siteTitle, subTitle }) => (
                 <div className={headerStyles.avatar}>
                   <img src={avatar} alt="The Bao Dev" />
                   <p className={headerStyles.avatarTitle}>
-                    Passion, dedication, and a lot of coffee{" "}
-                    <FontAwesomeIcon icon={faMugHot} />
+                    Passion, dedication, and a lot of coffee
                   </p>
                 </div>
               </div>
@@ -39,16 +37,24 @@ const Header = ({ siteTitle, subTitle }) => (
                 </h1>
                 <div className={headerStyles.icons}>
                   <div className={headerStyles.icon}>
-                    <FontAwesomeIcon icon={faLinkedin} />
+                    <a href="https://www.linkedin.com/in/thebao/">
+                      <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
                   </div>
                   <div className={headerStyles.icon}>
-                    <FontAwesomeIcon icon={faGithub} />
+                    <a href="https://github.com/methebao">
+                      <FontAwesomeIcon icon={faGithub} />
+                    </a>
                   </div>
                   <div className={headerStyles.icon}>
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <a href="https://www.facebook.com/thebao2433">
+                      <FontAwesomeIcon icon={faFacebook} />
+                    </a>
                   </div>
                   <div className={headerStyles.icon}>
-                    <FontAwesomeIcon icon={faSkype} />
+                    <a href="skype:primegods.1s?chat">
+                      <FontAwesomeIcon icon={faSkype} />
+                    </a>
                   </div>
                 </div>
                 <div className={headerStyles.desc}>
@@ -62,13 +68,11 @@ const Header = ({ siteTitle, subTitle }) => (
               </div>
             </div>
           </div>
-          <div className={headerStyles.vectors}>
-            <img
-              src={rightVector}
-              className={headerStyles.rightVector}
-              alt="frontend development"
-            />
-          </div>
+          <img
+            src={rightVector}
+            className={headerStyles.rightVector}
+            alt="frontend development"
+          />
         </div>
       </div>
     </section>

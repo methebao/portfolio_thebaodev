@@ -1,0 +1,12 @@
+// Custom slick slider
+.slick-dots li button:before {
+  margin-top: 15px;
+  content: '';
+  background-color: $info;
+
+  @include square(25px);
+
+  @include respond(desktop) {
+    @include square(15px);
+  }
+}

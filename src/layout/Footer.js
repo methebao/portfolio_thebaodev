@@ -29,10 +29,18 @@ const Footer = () => (
       </div>
     </div>
     <div className={footerStyles.icons}>
-      <FontAwesomeIcon icon={faLinkedin} />
-      <FontAwesomeIcon icon={faGithub} />
-      <FontAwesomeIcon icon={faFacebook} />
-      <FontAwesomeIcon icon={faSkype} />
+      <a href="https://www.linkedin.com/in/thebao/">
+        <FontAwesomeIcon icon={faLinkedin} />
+      </a>
+      <a href="https://github.com/methebao">
+        <FontAwesomeIcon icon={faGithub} />
+      </a>
+      <a href="https://www.facebook.com/thebao2433">
+        <FontAwesomeIcon icon={faFacebook} />
+      </a>
+      <a href="skype:primegods.1s?chat">
+        <FontAwesomeIcon icon={faSkype} />
+      </a>
     </div>
     <div className={footerStyles.copyRight}>
       <span>Handcrafted by me </span>

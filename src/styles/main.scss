@@ -1,12 +1,9 @@
 // ======================================================
 // Reset
 // ======================================================
-@import './vendors/mini-reset';
+@import './vendors/all';
 
 // ======================================================
-// Vendors
+// Helpers
 // ======================================================
-
-@import '../../node_modules/bulma/bulma.sass';
-@import '../../node_modules/slick-carousel/slick/slick.css';
-@import '../../node_modules/slick-carousel/slick/slick-theme.css';
+@import './helpers/all';

@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import productStyles from "./Product.module.scss";
 import Tag from "./Tag";
 import BrowserMockup from "src/components/BrowserMockup";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
-const Product = ({ title, description, content, tags, imageData }) => {
+import Button, { ButtonTypes } from "src/components/Button";
+
+const Product = ({ title, description, content, tags, url, imageData }) => {
   const renderTags = tags => {
     return tags.map(({ name, content, state }, index) => {
       return <Tag key={index} name={name} content={content} state={state} />;
@@ -27,6 +27,7 @@ const Product = ({ title, description, content, tags, imageData }) => {
             {title}
           </h1>
           <p className="subtitle is-6 has-text-left">{description}</p>
+          <hr />
           {splitString(content)}
           <div className="field is-grouped is-grouped-multiline">
             {renderTags(tags)}
@@ -37,6 +38,11 @@ const Product = ({ title, description, content, tags, imageData }) => {
         <BrowserMockup>
           <Img sizes={imageData} alt={title} />
         </BrowserMockup>
+        <div className={productStyles.viewDemoButton}>
+          <a href={url}>
+            <Button state={ButtonTypes.OUTLINE}>View Demo</Button>
+          </a>
+        </div>
       </div>
     </div>
   );
