@@ -52,14 +52,16 @@ const ServiceSection = ({ isVisible }) => {
             style={{ order: `${sectionOrder}` }}
             className="column is-half-tablet is-flex"
           >
-            <Service
-              key={id}
-              title={title}
-              subTitle={description}
-              items={content}
-              isPrimary={isPrimary}
-              sectionOrder={sectionOrder}
-            />
+            <a href="/contact">
+              <Service
+                key={id}
+                title={title}
+                subTitle={description}
+                items={content}
+                isPrimary={isPrimary}
+                sectionOrder={sectionOrder}
+              />
+            </a>
           </div>
         );
       }

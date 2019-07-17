@@ -71,11 +71,15 @@ const FormBase = () => {
           })
             .then(() => {
               debugger;
+              document.getElementById("failure").className = "display-none";
               document.getElementById("success").className = "";
+              setSubmitting(false);
             })
-            .catch(
-              error => (document.getElementById("failure").className = "")
-            );
+            .catch(error => {
+              document.getElementById("success").className = "display-none";
+              document.getElementById("failure").className = "";
+              setSubmitting(false);
+            });
         }}
       >
         {({ isSubmitting }) => (
@@ -172,18 +176,17 @@ const FormBase = () => {
               </div>
             </div>
             <div className="field">
-              <div className="control has-text-centered">
-                <br />
-                <Button state={ButtonTypes.PRIMARY} disabled={isSubmitting}>
-                  Submit
-                </Button>
-              </div>
-              <p class="hidden">
+              <p style={{ visibility: "hidden" }}>
                 <label>
                   Don’t fill this out if you're human:{" "}
                   <input name="bot-field" />
                 </label>
               </p>
+              <div className="control has-text-centered">
+                <Button state={ButtonTypes.PRIMARY} disabled={isSubmitting}>
+                  Submit
+                </Button>
+              </div>
             </div>
           </Form>
         )}

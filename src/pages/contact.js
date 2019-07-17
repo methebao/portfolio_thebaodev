@@ -7,7 +7,7 @@ const ContactPage = () => {
   return (
     <main>
       <NavBar state={NavBarTypes.INVERT} />
-      <SEO title="Home" />
+      <SEO title="Get in touch" />
       <Form />
     </main>
   );

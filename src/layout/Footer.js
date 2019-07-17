@@ -8,7 +8,11 @@ import {
   faSkype
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faCopyright, faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCopyright,
+  faLayerGroup,
+  faEnvelope
+} from "@fortawesome/free-solid-svg-icons";
 import footerStyles from "./Footer.module.scss";
 import Logo, { LogoContentTypes } from "../components/Logo";
 
@@ -40,6 +44,10 @@ const Footer = () => (
       </a>
       <a href="skype:primegods.1s?chat">
         <FontAwesomeIcon icon={faSkype} />
+      </a>
+
+      <a href="{/* mailto:thebao.dev@gmail.com?subject=[FROM_Porfolio] */}">
+        <FontAwesomeIcon icon={faEnvelope} />
       </a>
     </div>
     <div className={footerStyles.copyRight}>

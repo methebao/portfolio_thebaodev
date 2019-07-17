@@ -10,6 +10,7 @@ import {
   faFacebook,
   faSkype
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import rightVector from "../images/right-vector.svg";
 
 const Header = ({ siteTitle, subTitle }) => (
@@ -53,9 +54,15 @@ const Header = ({ siteTitle, subTitle }) => (
                       <FontAwesomeIcon icon={faFacebook} />
                     </a>
                   </div>
+
                   <div className={headerStyles.icon}>
                     <a href="skype:primegods.1s?chat">
                       <FontAwesomeIcon icon={faSkype} />
+                    </a>
+                  </div>
+                  <div className={headerStyles.icon}>
+                    <a href="{/* mailto:thebao.dev@gmail.com?subject=[FROM_Porfolio] */}">
+                      <FontAwesomeIcon icon={faEnvelope} />
                     </a>
                   </div>
                 </div>

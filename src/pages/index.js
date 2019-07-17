@@ -63,7 +63,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Profesional Frontend Developer" />
       <section className="section no-padding">
         <div className="container">
           <div className={`box ${indexStyles.customBox}`}>
@@ -86,8 +86,9 @@ const IndexPage = () => {
                   <AnchorLink href="#cta-section">
                     <Button state={ButtonTypes.PRIMARY}> Contact me</Button>
                   </AnchorLink>
-
-                  <Button state={ButtonTypes.INFO}> View Resume</Button>
+                  <a href="/contact">
+                    <Button state={ButtonTypes.INFO}> View Resume</Button>
+                  </a>
                 </div>
               </div>
             </div>
