@@ -1,5 +1,14 @@
 .custom-navbar {
   padding: 20px 0;
+  border-bottom: 1px solid $primary;
+
+  .invert-nav-bar {
+    width: 100%;
+
+    @include flexbox();
+
+    @include align-items(center);
+  }
 }
 
 .menu-custom {
@@ -10,4 +19,16 @@
   @include flexbox();
 
   @include justify-content(flex-end);
+}
+
+.close-icon {
+  font-size: $font-size-super-large;
+  color: rgba($info, .7);
+  margin-left: auto;
+  transition: all .2s;
+
+  &:hover {
+    color: $primary;
+    transform: scale(1.3);
+  }
 }

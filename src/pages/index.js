@@ -11,6 +11,7 @@ import FeaturedBox, { FeaturedBoxTypes } from "./index/components/FeaturedBox";
 import CTABox from "./index/components/CTABox";
 import MoreBox from "./index/components/MoreBox";
 import ServiceSection from "./index/components/ServiceSection";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -69,7 +70,14 @@ const IndexPage = () => {
             <div className={`has-text-centered ${indexStyles.sectionTitle}`}>
               <h2 className="heading-secondary">Porfolio</h2>
               <small>Selected Works since 2018</small>
-              <SimpleSlider>{renderProducts()}</SimpleSlider>
+              <ScrollAnimation
+                animateIn="shake"
+                duration={1.4}
+                animateOnce={true}
+              >
+                <SimpleSlider>{renderProducts()}</SimpleSlider>
+              </ScrollAnimation>
+
               <div className={indexStyles.cta}>
                 <h3 className="has-text-weight-semibold is-uppercase">
                   Want to build an app?
@@ -91,20 +99,22 @@ const IndexPage = () => {
           <h3 className="heading-tertiary">More from thebaoDEV</h3>
           <div className={`columns ${indexStyles.customColumns}`}>
             <div className="column">
-              <FeaturedBox
-                state={FeaturedBoxTypes.SERVICE}
-                onBoxPressed={() => {
-                  setIsServiceEnable(!isServiceEnable);
-                }}
-              >
-                <h2 className="heading-secondary heading-secondary--white heading-secondary--strong">
-                  Services
-                </h2>
-                <br />
-                <p className="description description--white">
-                  Let's make some awesome things !
-                </p>
-              </FeaturedBox>
+              <AnchorLink href="#cta-section">
+                <FeaturedBox
+                  state={FeaturedBoxTypes.SERVICE}
+                  onBoxPressed={() => {
+                    setIsServiceEnable(!isServiceEnable);
+                  }}
+                >
+                  <h2 className="heading-secondary heading-secondary--white heading-secondary--strong">
+                    Services
+                  </h2>
+                  <br />
+                  <p className="description description--white">
+                    Let's make some awesome things !
+                  </p>
+                </FeaturedBox>
+              </AnchorLink>
             </div>
             <div className="column">
               <FeaturedBox state={FeaturedBoxTypes.BLOG}>

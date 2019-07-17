@@ -1,0 +1,53 @@
+.wrapper {
+  background-color: $white;
+  padding: 3rem 1rem;
+
+  @include respond(tablet) {
+    padding: 3rem 3rem;
+  }
+
+  @include respond(desktop) {
+    padding: 3rem 6rem;
+  }
+
+  @include respond(widescreen) {
+    padding: 3rem 10rem;
+  }
+
+  @include respond(fullhd) {
+    padding: 3rem 20rem;
+  }
+}
+
+.form {
+  margin: 0 auto;
+  padding: 3rem;
+  max-width: 55rem;
+}
+
+.title {
+  display: block;
+  padding: 0 1rem;
+  font-family: $font-family-base;
+  font-weight: $font-weight-light;
+  font-size: $font-size-super-large;
+  text-align: center;
+}
+
+.sub-title {
+  display: block;
+  font-size: $font-size-large;
+}
+
+.fix-stretch {
+  & > * {
+    flex: 1;
+  }
+
+  &-select {
+    display: block;
+    & > * {
+      width: 100%;
+    }
+  }
+}

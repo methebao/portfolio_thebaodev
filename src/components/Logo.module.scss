@@ -11,6 +11,7 @@
 
 .logo-text {
   font-size: $font-size-large;
+  padding: 0 .5rem;
 
   @include flexbox();
 
@@ -26,6 +27,11 @@
     padding: 5px 10px;
     border-radius: $border-radius-base;
     transform: skew(-15deg, 0deg);
+
+    &-invert {
+      background-color: $primary;
+      color: $white;
+    }
   }
 
   .content-minimal {
@@ -50,6 +56,10 @@
     opacity: .4;
     transform: skew(-15deg, 0deg);
     z-index: -1;
+
+    &-invert {
+      background-color: $primary;
+    }
 
     @include size(30px, 25px);
 

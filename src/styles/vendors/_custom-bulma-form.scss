@@ -1,0 +1,13 @@
+.input {
+  font-size: $font-size-medium;
+  box-shadow: none;
+}
+.select select {
+  font-weight: $font-weight-bold;
+}
+
+.label {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-light;
+  font-size: $font-size-medium;
+}

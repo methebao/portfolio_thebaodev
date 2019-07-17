@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar, { NavBarTypes } from "./Navbar";
 import avatar from "../images/avatar.svg";
 import headerStyles from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +16,9 @@ const Header = ({ siteTitle, subTitle }) => (
   <header>
     <section className={`hero is-medium ${headerStyles.customHero}`}>
       <div className="hero-head">
-        <Navbar />
+        <div className="container">
+          <Navbar state={NavBarTypes.PRIMARY} />
+        </div>
       </div>
       <div className="hero-body">
         <div className={`container ${headerStyles.customContainer}`}>

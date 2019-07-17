@@ -3,8 +3,8 @@ import posed from "react-pose";
 import expandIconStyles from "./MoreBox.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAngleDoubleDown,
-  faAngleDoubleUp
+  faArrowAltCircleDown,
+  faArrowAltCircleUp
 } from "@fortawesome/free-solid-svg-icons";
 
 const AnimatedIcon = posed.div({
@@ -42,7 +42,7 @@ const MoreBox = ({ isVisible, onPressed }) => {
         pose={iconLoopState ? "visible" : "hidden"}
       >
         <FontAwesomeIcon
-          icon={isVisible ? faAngleDoubleUp : faAngleDoubleDown}
+          icon={isVisible ? faArrowAltCircleUp : faArrowAltCircleDown}
           className={expandIconStyles.servicesMoreIcon}
         />
       </AnimatedIcon>

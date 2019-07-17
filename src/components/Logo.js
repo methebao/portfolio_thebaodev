@@ -3,7 +3,8 @@ import logoStyles from "./Logo.module.scss";
 
 const LogoContentTypes = {
   PRIMARY: "primary",
-  MINIMAL: "minimal"
+  MINIMAL: "minimal",
+  INVERT: "invert"
 };
 const MinimalContent = () => {
   return (
@@ -31,9 +32,29 @@ const PrimaryContent = () => {
   );
 };
 
+const InvertContent = () => {
+  return (
+    <div className={logoStyles.logoWrapper}>
+      <div className={logoStyles.logoText}>
+        <span
+          className={`${logoStyles.extra} ${logoStyles.extraInvert} ${logoStyles.extraLeft}`}
+        />
+        <span
+          className={`${logoStyles.extra} ${logoStyles.extraInvert} ${logoStyles.extraRight}`}
+        />
+        <span className={`${logoStyles.content} ${logoStyles.contentInvert}`}>
+          <span className={logoStyles.name}>{`thebao`}</span>
+          <span className={logoStyles.key}>{`dev`}</span>
+        </span>
+      </div>
+    </div>
+  );
+};
+
 const Logo = ({ state }) => {
   const renderLogoContent = () => ({
     primary: <PrimaryContent />,
+    invert: <InvertContent />,
     minimal: <MinimalContent />
   });
 

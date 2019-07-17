@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
+import { faDotCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import navbarStyles from "./Navbar.module.scss";
 import Button, { ButtonTypes } from "../components/Button";
 import Logo, { LogoContentTypes } from "../components/Logo";
+
+const NavBarTypes = {
+  PRIMARY: "primary",
+  INVERT: "invert"
+};
 
 const NavbarBurger = ({ onToggleMenu }) => (
   <a
@@ -47,22 +52,46 @@ const NavbarMenu = ({ isActive }) => (
     </div>
   </div>
 );
-
-const Navbar = () => {
-  const [isActive, toggleMenu] = useState(false);
+const PrimaryNavBar = ({ isActive, toggleMenu }) => {
   return (
-    <div className="container">
-      <nav className={`navbar is-transparent ${navbarStyles.customNavbar}`}>
-        <div className="navbar-brand">
-          <a className="navbar-item" href="/">
-            <Logo state={LogoContentTypes.PRIMARY} />
-          </a>
-          <NavbarBurger onToggleMenu={() => toggleMenu(!isActive)} />
-        </div>
-        <NavbarMenu isActive={isActive} />
-      </nav>
+    <>
+      <div className="navbar-brand">
+        <a className="navbar-item" href="/">
+          <Logo state={LogoContentTypes.PRIMARY} />
+        </a>
+        <NavbarBurger onToggleMenu={() => toggleMenu(!isActive)} />
+      </div>
+      <NavbarMenu isActive={isActive} />
+    </>
+  );
+};
+const InvertNavBar = () => {
+  return (
+    <div className={`container ${navbarStyles.invertNavBar}`}>
+      <div className="navbar-brand">
+        <a className="navbar-item" href="/">
+          <Logo state={LogoContentTypes.INVERT} />
+        </a>
+      </div>
+      <a href="/" className={navbarStyles.closeIcon}>
+        <FontAwesomeIcon icon={faTimesCircle} />
+      </a>
     </div>
   );
 };
+const NavbarBase = ({ state }) => {
+  const [isActive, toggleMenu] = useState(false);
 
-export default Navbar;
+  const renderNavBar = () => ({
+    primary: <PrimaryNavBar isActive={isActive} toggleMenu={toggleMenu} />,
+    invert: <InvertNavBar />
+  });
+  return (
+    <nav className={`navbar is-transparent ${navbarStyles.customNavbar}`}>
+      {renderNavBar()[state]}
+    </nav>
+  );
+};
+
+export default NavbarBase;
+export { NavBarTypes };
