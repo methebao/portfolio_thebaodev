@@ -16,6 +16,29 @@ const FormBase = () => {
         I can't wait to hear your project ideas.
         <span className={formStyles.subTitle}>Let talk about them!</span>
       </h1>
+      <div id="notification">
+        <br />
+        <div id="success" className="display-none">
+          <article className="message is-primary ">
+            <div className="message-body has-text-info">
+              <strong>
+                ❖ Thank you for your interesting. I will reply you as soon as
+                possible !
+              </strong>
+            </div>
+          </article>
+        </div>
+        <div id="failure" className="display-none">
+          <article className="message is-danger">
+            <div className="message-body has-text-info">
+              <strong>
+                ❖ Please try again later. I'm so sorry about this problem. Feel
+                free to email me directly.
+              </strong>
+            </div>
+          </article>
+        </div>
+      </div>
 
       <Formik
         initialValues={{
@@ -46,8 +69,13 @@ const FormBase = () => {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "contact", ...values })
           })
-            .then(() => alert("Success!"))
-            .catch(error => alert(error));
+            .then(() => {
+              debugger;
+              document.getElementById("success").className = "";
+            })
+            .catch(
+              error => (document.getElementById("failure").className = "")
+            );
         }}
       >
         {({ isSubmitting }) => (
@@ -56,6 +84,7 @@ const FormBase = () => {
             name="contact"
             method="POST"
             data-netlify="true"
+            data-netlify-honeypot="bot-field"
           >
             <div className="field is-horizontal">
               <div className="field-body">
@@ -88,15 +117,13 @@ const FormBase = () => {
                 <div className="field">
                   <label className="label">Type of service</label>
                   <div className="control">
-                    <span class={`select ${formStyles.fixStretchSelect}`}>
+                    <span className={`select ${formStyles.fixStretchSelect}`}>
                       <Field
                         component="select"
                         name="type"
                         placeholder="Select project type"
                       >
-                        <option value="design-to-code" selected>
-                          Design To Code
-                        </option>
+                        <option value="design-to-code">Design To Code</option>
                         <option value="landing-page">
                           Modern Landing Page
                         </option>
@@ -111,15 +138,13 @@ const FormBase = () => {
                 <div className="field">
                   <label className="label">Budget</label>
                   <div className="control">
-                    <span class={`select ${formStyles.fixStretchSelect}`}>
+                    <span className={`select ${formStyles.fixStretchSelect}`}>
                       <Field
                         component="select"
                         name="budget"
                         placeholder="Select your budget"
                       >
-                        <option value="300to1500" selected>
-                          300$ - 1500$
-                        </option>
+                        <option value="300to1500">300$ - 1500$</option>
                         <option value="1500to4000">1500$ - 4000$</option>
                         <option value="over4000">
                           Longterm projects (>4000$)
@@ -146,13 +171,19 @@ const FormBase = () => {
                 />
               </div>
             </div>
-            <div class="field">
-              <div class="control has-text-centered">
+            <div className="field">
+              <div className="control has-text-centered">
                 <br />
                 <Button state={ButtonTypes.PRIMARY} disabled={isSubmitting}>
                   Submit
                 </Button>
               </div>
+              <p class="hidden">
+                <label>
+                  Don’t fill this out if you're human:{" "}
+                  <input name="bot-field" />
+                </label>
+              </p>
             </div>
           </Form>
         )}
