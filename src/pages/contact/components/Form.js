@@ -1,12 +1,12 @@
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import Button, { ButtonTypes } from "src/components/Button";
-import formStyles from "./Form.module.scss";
+import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import Button, { ButtonTypes } from 'src/components/Button';
+import formStyles from './Form.module.scss';
 
 const encode = data => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
 };
 
 const FormBase = () => {
@@ -42,20 +42,20 @@ const FormBase = () => {
 
       <Formik
         initialValues={{
-          name: "",
-          email: "",
-          type: "design-to-code",
-          budget: "300to1500",
-          extra: ""
+          name: '',
+          email: '',
+          type: 'design-to-code',
+          budget: '300to1500',
+          extra: ''
         }}
         validate={values => {
           let errors = {};
           if (!values.email) {
-            errors.email = "Required";
+            errors.email = 'Required';
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
-            errors.email = "Invalid email address";
+            errors.email = 'Invalid email address';
           }
           return errors;
         }}
@@ -64,20 +64,19 @@ const FormBase = () => {
           //   alert(JSON.stringify(values, null, 2));
           //   setSubmitting(false);
           // }, 400);
-          fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", ...values })
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encode({ 'form-name': 'contact', ...values })
           })
             .then(() => {
-              debugger;
-              document.getElementById("failure").className = "display-none";
-              document.getElementById("success").className = "";
+              document.getElementById('failure').className = 'display-none';
+              document.getElementById('success').className = '';
               setSubmitting(false);
             })
             .catch(error => {
-              document.getElementById("success").className = "display-none";
-              document.getElementById("failure").className = "";
+              document.getElementById('success').className = 'display-none';
+              document.getElementById('failure').className = '';
               setSubmitting(false);
             });
         }}
@@ -176,9 +175,9 @@ const FormBase = () => {
               </div>
             </div>
             <div className="field">
-              <p style={{ visibility: "hidden" }}>
+              <p style={{ visibility: 'hidden' }}>
                 <label>
-                  Don’t fill this out if you're human:{" "}
+                  Don’t fill this out if you're human:{' '}
                   <input name="bot-field" />
                 </label>
               </p>

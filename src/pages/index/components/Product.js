@@ -1,10 +1,10 @@
-import React from "react";
-import Img from "gatsby-image";
-import PropTypes from "prop-types";
-import productStyles from "./Product.module.scss";
-import Tag from "./Tag";
-import BrowserMockup from "src/components/BrowserMockup";
-import Button, { ButtonTypes } from "src/components/Button";
+import React from 'react';
+import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
+import productStyles from './Product.module.scss';
+import Tag from './Tag';
+import BrowserMockup from 'src/components/BrowserMockup';
+import Button, { ButtonTypes } from 'src/components/Button';
 
 const Product = ({ title, description, content, tags, url, imageData }) => {
   const renderTags = tags => {
@@ -13,14 +13,14 @@ const Product = ({ title, description, content, tags, url, imageData }) => {
     });
   };
   const splitString = string =>
-    string.split("\n").map((text, index) => (
+    string.split('\n').map((text, index) => (
       <article key={`${text}-${index}`} className="box is-gray">
         <div className=" has-text-left">{text}</div>
       </article>
     ));
 
   return (
-    <div className={`columns ${productStyles.product}`}>
+    <div className={`columns is-desktop ${productStyles.product}`}>
       <div className="column">
         <div className={productStyles.info}>
           <h1 className={`title is-4 has-text-left ${productStyles.title}`}>
@@ -56,20 +56,20 @@ Product.propTypes = {
 };
 
 Product.defaultProps = {
-  title: "Product Title Sample",
-  description: "Product description sample",
+  title: 'Product Title Sample',
+  description: 'Product description sample',
   content:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aut vitae rerum odio sequi culpa, magni aspernatur minima fugiat ullam, deleniti libero! Voluptatibus sit aliquid molestiae excepturi esse eius quos.",
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aut vitae rerum odio sequi culpa, magni aspernatur minima fugiat ullam, deleniti libero! Voluptatibus sit aliquid molestiae excepturi esse eius quos.',
   tags: [
     {
-      name: "Built with",
-      content: "HTML/SCSS",
-      state: "builtWith"
+      name: 'Built with',
+      content: 'HTML/SCSS',
+      state: 'builtWith'
     },
     {
-      name: "Type",
-      content: "PSD To HTML",
-      state: "type"
+      name: 'Type',
+      content: 'PSD To HTML',
+      state: 'type'
     }
   ]
 };

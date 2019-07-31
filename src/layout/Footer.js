@@ -1,20 +1,20 @@
-import React from "react";
-import bulmaLogo from "../images/made-with-bulma.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import bulmaLogo from '../images/made-with-bulma.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
   faGithub,
   faFacebook,
   faSkype
-} from "@fortawesome/free-brands-svg-icons";
+} from '@fortawesome/free-brands-svg-icons';
 
 import {
   faCopyright,
   faLayerGroup,
   faEnvelope
-} from "@fortawesome/free-solid-svg-icons";
-import footerStyles from "./Footer.module.scss";
-import Logo, { LogoContentTypes } from "../components/Logo";
+} from '@fortawesome/free-solid-svg-icons';
+import footerStyles from './Footer.module.scss';
+import Logo, { LogoContentTypes } from '../components/Logo';
 
 const Footer = () => (
   <footer
@@ -55,6 +55,7 @@ const Footer = () => (
       <FontAwesomeIcon icon={faCopyright} />
       <Logo state={LogoContentTypes.MINIMAL} />
     </div>
+
     <div className="made-with-bulma">
       <a href="https://bulma.io">
         <img src={bulmaLogo} alt="Made with Bulma" width="128" height="24" />

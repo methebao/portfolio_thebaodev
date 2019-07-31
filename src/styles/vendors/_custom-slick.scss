@@ -10,3 +10,34 @@
     @include square(15px);
   }
 }
+
+.slick-prev:before,
+.slick-next:before {
+  color: $info;
+  font-size: $font-size-medium-large;
+  opacity: .5;
+  transition: all .2s;
+
+  @include respond(tablet) {
+    font-size: $font-size-large;
+  }
+
+  @include respond(tablet) {
+    font-size: $font-size-large;
+  }
+}
+.slick-next,
+.slick-prev {
+  z-index: 1;
+  top: 45%;
+
+  @include square(25px);
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}

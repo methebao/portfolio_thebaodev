@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import posed from "react-pose";
-import expandIconStyles from "./MoreBox.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, useEffect } from 'react';
+import posed from 'react-pose';
+import expandIconStyles from './MoreBox.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowAltCircleDown,
   faArrowAltCircleUp
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 const AnimatedIcon = posed.div({
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      y: { type: "spring", stiffness: 1000, damping: 10 }
+      y: { type: 'spring', stiffness: 1000, damping: 10 }
     }
   },
   hidden: {
@@ -38,14 +38,16 @@ const MoreBox = ({ isVisible, onPressed }) => {
   return (
     <div className={expandIconStyles.servicesIconWrapper} onClick={onPressed}>
       <AnimatedIcon
-        key={"animated-icon"}
-        pose={iconLoopState ? "visible" : "hidden"}
+        key={'animated-icon'}
+        pose={iconLoopState ? 'visible' : 'hidden'}
       >
         <FontAwesomeIcon
           icon={isVisible ? faArrowAltCircleUp : faArrowAltCircleDown}
           className={expandIconStyles.servicesMoreIcon}
         />
       </AnimatedIcon>
+
+      <small className={expandIconStyles.servicesMoreText}>Open here !</small>
     </div>
   );
 };

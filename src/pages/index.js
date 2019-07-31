@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import Layout from "../layout/Layout";
-import SEO from "../layout/SEO";
-import indexStyles from "./index.module.scss";
-import SimpleSlider from "../components/Slider";
-import Product from "./index/components/Product";
-import Button, { ButtonTypes } from "../components/Button";
-import FeaturedBox, { FeaturedBoxTypes } from "./index/components/FeaturedBox";
-import CTABox from "./index/components/CTABox";
-import MoreBox from "./index/components/MoreBox";
-import ServiceSection from "./index/components/ServiceSection";
-import ScrollAnimation from "react-animate-on-scroll";
+import React, { useState } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Layout from '../layout/Layout';
+import SEO from '../layout/SEO';
+import indexStyles from './index.module.scss';
+import SimpleSlider from '../components/Slider';
+import Product from './index/components/Product';
+import Button, { ButtonTypes } from '../components/Button';
+import FeaturedBox, { FeaturedBoxTypes } from './index/components/FeaturedBox';
+import CTABox from './index/components/CTABox';
+import MoreBox from './index/components/MoreBox';
+import ServiceSection from './index/components/ServiceSection';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -71,7 +71,7 @@ const IndexPage = () => {
               <h2 className="heading-secondary">Porfolio</h2>
               <small>Selected Works since 2018</small>
               <ScrollAnimation
-                animateIn="shake"
+                animateIn="pulse"
                 duration={1.4}
                 animateOnce={true}
               >

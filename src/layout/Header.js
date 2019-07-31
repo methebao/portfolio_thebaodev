@@ -1,17 +1,17 @@
-import PropTypes from "prop-types";
-import React from "react";
-import Navbar, { NavBarTypes } from "./Navbar";
-import avatar from "../images/avatar.svg";
-import headerStyles from "./Header.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from 'prop-types';
+import React from 'react';
+import Navbar, { NavBarTypes } from './Navbar';
+import avatar from '../images/avatar.svg';
+import headerStyles from './Header.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
   faGithub,
   faFacebook,
   faSkype
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import rightVector from "../images/right-vector.svg";
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import rightVector from '../images/right-vector.svg';
 
 const Header = ({ siteTitle, subTitle }) => (
   <header>
@@ -61,7 +61,7 @@ const Header = ({ siteTitle, subTitle }) => (
                     </a>
                   </div>
                   <div className={headerStyles.icon}>
-                    <a href="{/* mailto:thebao.dev@gmail.com?subject=[FROM_Porfolio] */}">
+                    <a href="mailto:thebao.dev@gmail.com?subject=[FROM_Porfolio]">
                       <FontAwesomeIcon icon={faEnvelope} />
                     </a>
                   </div>

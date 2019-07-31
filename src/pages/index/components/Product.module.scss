@@ -1,23 +1,24 @@
 .product {
   height: 100%;
   margin: 1rem;
-  padding: 2rem;
-  border-radius: $border-radius-base;
-  border: $border-base;
+
   .title {
     font-family: $font-family-primary;
   }
+
   &:last-child {
     margin-bottom: 0;
   }
-  &:not(.is-desktop) {
-    @include respond(tablet) {
-      display: block;
-    }
 
-    @include respond(desktop) {
-      @include flexbox();
-    }
+  @include respond(tablet) {
+    display: block;
+    border-radius: $border-radius-base;
+    border: $border-base;
+    padding: 1.5rem;
+  }
+
+  @include respond(fullhd) {
+    @include flexbox();
   }
 }
 

@@ -41,6 +41,7 @@
     "react-typography": "^0.16.19",
     "recompose": "^0.30.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^4.0.0",
     "typeface-bowlby-one-sc": "^0.0.72",
     "typeface-exo": "^0.0.61",
     "typeface-open-sans": "^0.0.54",

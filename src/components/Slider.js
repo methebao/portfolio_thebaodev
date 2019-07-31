@@ -1,6 +1,6 @@
-import React from "react";
-import Slider from "react-slick";
-import sliderStyles from "./Slider.module.scss";
+import React from 'react';
+import Slider from 'react-slick';
+import sliderStyles from './Slider.module.scss';
 
 const SliderWrapper = ({ children }) => {
   const settings = {

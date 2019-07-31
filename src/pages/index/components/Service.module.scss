@@ -5,15 +5,20 @@
   border-radius: $border-radius-base;
   box-shadow: $box-shadow-service;
   margin: 1rem;
+  text-align: center;
 
   &-primary {
     background-color: $warning;
   }
   .main-icon-wrapper {
-    padding-left: 2.5rem;
     padding-top: 2.5rem;
+
     .main-icon {
       @include square(100px);
+    }
+
+    @include respond(tablet) {
+      padding-left: 2.5rem;
     }
   }
 
@@ -30,13 +35,15 @@
 
   .title-wrapper {
     color: $gray-light;
-    padding: 1rem;
+
+    @include respond(tablet) {
+      padding: 1rem;
+    }
 
     .title {
       font-family: $font-family-primary;
       display: block;
       padding: .5rem;
-      padding-right: 2rem;
       background-image: linear-gradient(
         130deg,
         transparent 95%,
