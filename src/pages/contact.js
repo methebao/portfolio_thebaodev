@@ -1,13 +1,13 @@
-import React from "react";
-import SEO from "../layout/SEO";
-import NavBar, { NavBarTypes } from "../layout/Navbar";
+import React from 'react';
+import SEO from '../layout/SEO';
+import NavBar, { NavBarTypes } from '../layout/Navbar';
 
-import Form from "./contact/components/Form";
+import Form from './contact/components/Form';
 const ContactPage = () => {
   return (
     <main>
       <NavBar state={NavBarTypes.INVERT} />
-      <SEO title="Get in touch" />
+      <SEO title="Profesional Frontend Developer" />
       <Form />
     </main>
   );
