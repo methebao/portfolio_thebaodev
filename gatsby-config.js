@@ -1,6 +1,6 @@
-const dotenv = require("dotenv");
+const dotenv = require('dotenv');
 
-if (process.env.ENVIRONMENT !== "production") {
+if (process.env.ENVIRONMENT !== 'production') {
   dotenv.config();
 }
 
@@ -10,11 +10,14 @@ module.exports = {
   siteMetadata: {
     title: `TheBaoDev`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@methebao`
+    author: `@methebao`,
+    siteUrl: `http://thebaodev.me`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-root-import`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
@@ -39,7 +42,7 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-contentful",
+      resolve: 'gatsby-source-contentful',
       options: {
         spaceId,
         accessToken
