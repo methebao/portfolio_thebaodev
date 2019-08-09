@@ -8,8 +8,8 @@ const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `TheBaoDev`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `TheBaoDev | Professional Frontend Developer`,
+    description: `ENGAGE YOUR AUDIENCES WITH MODERN FRONTEND UI/UX by a Professional Frontend Developer`,
     author: `@methebao`,
     siteUrl: `http://thebaodev.me`
   },

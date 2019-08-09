@@ -1,15 +1,19 @@
-import React, { useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import React, { useState } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDotCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import navbarStyles from "./Navbar.module.scss";
-import Button, { ButtonTypes } from "../components/Button";
-import Logo, { LogoContentTypes } from "../components/Logo";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faDotCircle,
+  faTimesCircle,
+  faPenNib
+} from '@fortawesome/free-solid-svg-icons';
+import navbarStyles from './Navbar.module.scss';
+import Button, { ButtonTypes } from '../components/Button';
+import Logo, { LogoContentTypes } from '../components/Logo';
 
 const NavBarTypes = {
-  PRIMARY: "primary",
-  INVERT: "invert"
+  PRIMARY: 'primary',
+  INVERT: 'invert'
 };
 
 const NavbarBurger = ({ onToggleMenu }) => (
@@ -32,9 +36,21 @@ const NavbarMenu = ({ isActive }) => (
   <div
     id="mainNavbar"
     className={`navbar-menu ${navbarStyles.menuCustom} ${isActive &&
-      "is-active"}`}
+      'is-active'}`}
   >
     <div className="navbar-end">
+      <div className="navbar-item">
+        <div className={`field ${navbarStyles.fieldCustom}`}>
+          <p className="control">
+            <Button state={ButtonTypes.PRIMARY}>
+              <span className="icon has-text-white">
+                <FontAwesomeIcon icon={faPenNib} />
+              </span>
+              <span>My Blog</span>
+            </Button>
+          </p>
+        </div>
+      </div>
       <div className="navbar-item">
         <div className={`field ${navbarStyles.fieldCustom}`}>
           <p className="control">

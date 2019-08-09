@@ -118,7 +118,12 @@ const IndexPage = () => {
               </AnchorLink>
             </div>
             <div className="column">
-              <FeaturedBox state={FeaturedBoxTypes.BLOG}>
+              <FeaturedBox
+                state={FeaturedBoxTypes.BLOG}
+                onBoxPressed={() => {
+                  window.location.href = 'http://blog.thebaodev.me';
+                }}
+              >
                 <h2 className="heading-secondary heading-secondary--white heading-secondary--strong">
                   A Dev Life
                 </h2>
