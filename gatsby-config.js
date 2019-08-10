@@ -8,7 +8,7 @@ const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `TheBaoDev`,
+    title: `TheBaoDev | Professional Frontend Developer`,
     description: `ENGAGE YOUR AUDIENCES WITH MODERN FRONTEND UI/UX by a Professional Frontend Developer`,
     author: `@methebao`,
     siteUrl: `http://thebaodev.me`
