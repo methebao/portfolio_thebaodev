@@ -33,3 +33,10 @@
     transform: scale(1.3);
   }
 }
+
+.blog-link {
+  display: inline-block;
+  font-family: $font-family-primary;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-base;
+}

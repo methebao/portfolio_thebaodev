@@ -42,12 +42,12 @@ const NavbarMenu = ({ isActive }) => (
       <div className="navbar-item">
         <div className={`field ${navbarStyles.fieldCustom}`}>
           <p className="control">
-            <Button state={ButtonTypes.PRIMARY}>
+            <a href="https://blog.thebaodev.me" className={`button is-primary ${navbarStyles.blogLink}`}>
               <span className="icon has-text-white">
                 <FontAwesomeIcon icon={faPenNib} />
               </span>
               <span>My Blog</span>
-            </Button>
+            </a>
           </p>
         </div>
       </div>
