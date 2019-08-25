@@ -5,11 +5,11 @@
   @include respond(tablet) {
     max-width: 80%;
     margin: 0 auto;
-    margin-top: -5rem;
+    margin-top: -2rem;
   }
 
   @include respond(desktop) {
-    margin-top: -10rem;
+    margin-top: -3rem;
   }
 
   small {
