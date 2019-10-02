@@ -18,32 +18,32 @@ const NavBarTypes = {
 
 const NavbarBurger = ({ onToggleMenu }) => (
   <a
-    href="#"
-    role="button"
-    className="navbar-burger"
-    data-target="navMenu"
-    aria-label="menu"
-    aria-expanded="false"
-    onClick={onToggleMenu}
-  >
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
+    href='#'
+    role='button'
+    className='navbar-burger'
+    data-target='navMenu'
+    aria-label='menu'
+    aria-expanded='false'
+    onClick={onToggleMenu}>
+    <span aria-hidden='true'></span>
+    <span aria-hidden='true'></span>
+    <span aria-hidden='true'></span>
   </a>
 );
 
 const NavbarMenu = ({ isActive }) => (
   <div
-    id="mainNavbar"
+    id='mainNavbar'
     className={`navbar-menu ${navbarStyles.menuCustom} ${isActive &&
-      'is-active'}`}
-  >
-    <div className="navbar-end">
-      <div className="navbar-item">
+      'is-active'}`}>
+    <div className='navbar-end'>
+      <div className='navbar-item'>
         <div className={`field ${navbarStyles.fieldCustom}`}>
-          <p className="control">
-            <a href="https://blog.thebaodev.me" className={`button is-primary ${navbarStyles.blogLink}`}>
-              <span className="icon has-text-white">
+          <p className='control'>
+            <a
+              href='https://blog.viba.studio'
+              className={`button is-primary ${navbarStyles.blogLink}`}>
+              <span className='icon has-text-info'>
                 <FontAwesomeIcon icon={faPenNib} />
               </span>
               <span>My Blog</span>
@@ -51,12 +51,12 @@ const NavbarMenu = ({ isActive }) => (
           </p>
         </div>
       </div>
-      <div className="navbar-item">
+      <div className='navbar-item'>
         <div className={`field ${navbarStyles.fieldCustom}`}>
-          <p className="control">
-            <AnchorLink href="#cta-section">
+          <p className='control'>
+            <AnchorLink href='#cta-section'>
               <Button state={ButtonTypes.CTA}>
-                <span className="icon has-text-white">
+                <span className='icon has-text-white'>
                   <FontAwesomeIcon icon={faDotCircle} />
                 </span>
                 <span>Talk to me</span>
@@ -71,8 +71,8 @@ const NavbarMenu = ({ isActive }) => (
 const PrimaryNavBar = ({ isActive, toggleMenu }) => {
   return (
     <>
-      <div className="navbar-brand">
-        <a className="navbar-item" href="/">
+      <div className='navbar-brand'>
+        <a className='navbar-item' href='/'>
           <Logo state={LogoContentTypes.PRIMARY} />
         </a>
         <NavbarBurger onToggleMenu={() => toggleMenu(!isActive)} />
@@ -84,12 +84,12 @@ const PrimaryNavBar = ({ isActive, toggleMenu }) => {
 const InvertNavBar = () => {
   return (
     <div className={`container ${navbarStyles.invertNavBar}`}>
-      <div className="navbar-brand">
-        <a className="navbar-item" href="/">
+      <div className='navbar-brand'>
+        <a className='navbar-item' href='/'>
           <Logo state={LogoContentTypes.INVERT} />
         </a>
       </div>
-      <a href="/" className={navbarStyles.closeIcon}>
+      <a href='/' className={navbarStyles.closeIcon}>
         <FontAwesomeIcon icon={faTimesCircle} />
       </a>
     </div>

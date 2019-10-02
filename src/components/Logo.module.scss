@@ -6,12 +6,12 @@
 
 .logo-minimal-wrapper {
   display: inline-block;
-  padding: 0 .2rem;
+  padding: 0 0.2rem;
 }
 
 .logo-text {
   font-size: $font-size-large;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 
   @include flexbox();
 
@@ -21,15 +21,19 @@
 
   .content {
     font-family: $font-family-logo;
-    background-color: $white;
-    color: $primary;
+    background: $info;
+    color: $white;
     margin: auto 10px;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: $border-radius-base;
-    transform: skew(-15deg, 0deg);
+    transform: skew(-8deg, 0deg);
 
     &-invert {
-      background-color: $primary;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.5) 53%,
+        rgba(255, 255, 255, 0.8) 53%
+      );
       color: $white;
     }
   }
@@ -37,7 +41,7 @@
   .content-minimal {
     font-family: $font-family-primary;
     width: 100%;
-    color: rgba($gray-dark-1, .7);
+    color: rgba($gray-dark-1, 0.7);
     padding: 0 5px;
     font-size: $font-size-medium;
   }
@@ -47,28 +51,11 @@
   }
 
   .name {
-    font-size: $font-size-large;
-  }
-
-  .extra {
-    background-color: $info;
-    border-radius: $border-radius-base;
-    opacity: .4;
-    transform: skew(-15deg, 0deg);
-    z-index: -1;
-
-    &-invert {
-      background-color: $primary;
-    }
-
-    @include size(30px, 25px);
-
-    &-right {
-      @include position(absolute, -6px, 2px, null, null);
-    }
-
-    &-left {
-      @include position(absolute, null, null, -6px, 2px);
-    }
+    margin-left: 0.5rem;
+    font-family: $font-family-base;
+    text-transform: uppercase;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-base;
+    opacity: 0.5;
   }
 }

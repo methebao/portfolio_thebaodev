@@ -8,10 +8,10 @@ const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `TheBaoDev | Professional Frontend Developer`,
+    title: `VIBA .studio | Professional Web Development Services`,
     description: `ENGAGE YOUR AUDIENCES WITH MODERN FRONTEND UI/UX by a Professional Frontend Developer`,
     author: `@methebao`,
-    siteUrl: `http://thebaodev.me`
+    siteUrl: `http://viba.studio`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -67,7 +67,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `thebaodev`,
+        name: `vibastudio`,
         short_name: `porfolio`,
         start_url: `/`,
         background_color: `#663399`,

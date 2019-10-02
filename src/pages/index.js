@@ -35,6 +35,7 @@ const IndexPage = () => {
               state
               name
             }
+            createdAt
             url
           }
         }
@@ -46,7 +47,10 @@ const IndexPage = () => {
     return item.node;
   });
   const renderProducts = () => {
-    return products.map(product => (
+    let sortedProducts = products.sort(function(product01, product02) {
+      return new Date(product02.createdAt) - new Date(product01.createdAt);
+    });
+    return sortedProducts.map(product => (
       <Product
         key={product.id}
         title={product.title}
@@ -63,30 +67,29 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Profesional Frontend Developer" />
-      <section className="section no-padding">
-        <div className="container">
+      <SEO title='Profesional Frontend Developer' />
+      <section className='section no-padding'>
+        <div className='container'>
           <div className={`box ${indexStyles.customBox}`}>
             <div className={`has-text-centered ${indexStyles.sectionTitle}`}>
-              <h2 className="heading-secondary">Porfolio</h2>
+              <h2 className='heading-secondary'>Porfolio</h2>
               <small>Selected Works since 2018</small>
               <ScrollAnimation
-                animateIn="pulse"
+                animateIn='pulse'
                 duration={1.4}
-                animateOnce={true}
-              >
+                animateOnce={true}>
                 <SimpleSlider>{renderProducts()}</SimpleSlider>
               </ScrollAnimation>
 
               <div className={indexStyles.cta}>
-                <h3 className="has-text-weight-semibold is-uppercase">
+                <h3 className='has-text-weight-semibold is-uppercase'>
                   Want to build an app?
                 </h3>
                 <div className={`${indexStyles.buttonGroup}`}>
-                  <AnchorLink href="#cta-section">
+                  <AnchorLink href='#cta-section'>
                     <Button state={ButtonTypes.PRIMARY}> Contact me</Button>
                   </AnchorLink>
-                  <a href="/contact">
+                  <a href='/contact'>
                     <Button state={ButtonTypes.INFO}> View Resume</Button>
                   </a>
                 </div>
@@ -96,41 +99,38 @@ const IndexPage = () => {
         </div>
       </section>
       <section className={`section ${indexStyles.more}`}>
-        <div className="container has-text-centered">
-          <h3 className="heading-tertiary">More from thebaoDEV</h3>
+        <div className='container has-text-centered'>
+          <h3 className='heading-tertiary'>More from thebaoDEV</h3>
           <div className={`columns ${indexStyles.customColumns}`}>
-            <div className="column">
-              <AnchorLink href="#cta-section">
+            <div className='column'>
+              <AnchorLink href='#cta-section'>
                 <FeaturedBox
                   state={FeaturedBoxTypes.SERVICE}
                   onBoxPressed={() => {
                     setIsServiceEnable(!isServiceEnable);
-                  }}
-                >
-                  <h2 className="heading-secondary heading-secondary--white heading-secondary--strong">
+                  }}>
+                  <h2 className='heading-secondary heading-secondary--white heading-secondary--strong'>
                     Services
                   </h2>
                   <br />
-                  <p className="description description--white">
+                  <p className='description description--white'>
                     Let's make some awesome things !
                   </p>
                 </FeaturedBox>
               </AnchorLink>
             </div>
-            <div className="column">
+            <div className='column'>
               <FeaturedBox
                 state={FeaturedBoxTypes.BLOG}
                 onBoxPressed={() => {
-                  window.location.href = 'http://blog.thebaodev.me';
-                }}
-              >
-                <h2 className="heading-secondary heading-secondary--white heading-secondary--strong">
+                  window.location.href = 'http://blog.viba.studio';
+                }}>
+                <h2 className='heading-secondary heading-secondary--white heading-secondary--strong'>
                   A Dev Life
                 </h2>
                 <br />
-                <p className="description description--white">
-                  Programming blog. Contain programming language. Not safe for
-                  kids.
+                <p className='description description--white'>
+                  Programming blog. Contain programming language. Life story.
                 </p>
               </FeaturedBox>
             </div>
@@ -139,9 +139,8 @@ const IndexPage = () => {
       </section>
 
       <section
-        className={`section is-primary ${indexStyles.servicesBackground}`}
-      >
-        <div className="has-text-centered">
+        className={`section is-primary ${indexStyles.servicesBackground}`}>
+        <div className='has-text-centered'>
           <h2 className={`heading-secondary has-text-white`}>
             Take a look with awesome services
             <span className={indexStyles.subTitle}>
@@ -156,15 +155,14 @@ const IndexPage = () => {
           onPressed={() => setIsServiceEnable(!isServiceEnable)}
         />
 
-        <div className="container">
+        <div className='container'>
           <ServiceSection isVisible={isServiceEnable} />
         </div>
       </section>
       <section
-        id="cta-section"
-        className={`section is-primary has-text-centered ${indexStyles.callToAction}`}
-      >
-        <div className="container is-narrow">
+        id='cta-section'
+        className={`section is-primary has-text-centered ${indexStyles.callToAction}`}>
+        <div className='container is-narrow'>
           <CTABox />
         </div>
       </section>

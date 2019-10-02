@@ -16,18 +16,18 @@ import rightVector from '../images/right-vector.svg';
 const Header = ({ siteTitle, subTitle }) => (
   <header>
     <section className={`hero is-medium ${headerStyles.customHero}`}>
-      <div className="hero-head">
-        <div className="container">
+      <div className='hero-head'>
+        <div className='container'>
           <Navbar state={NavBarTypes.PRIMARY} />
         </div>
       </div>
-      <div className="hero-body">
+      <div className='hero-body'>
         <div className={`container ${headerStyles.customContainer}`}>
           <div className={headerStyles.middleContent}>
-            <div className="columns">
-              <div className="column is-one-third">
+            <div className='columns'>
+              <div className='column is-one-third'>
                 <div className={headerStyles.avatar}>
-                  <img src={avatar} alt="The Bao Dev" />
+                  <img src={avatar} alt='The Bao Dev' />
                   <p className={headerStyles.avatarTitle}>
                     Passion, dedication, and a lot of coffee
                   </p>
@@ -40,28 +40,28 @@ const Header = ({ siteTitle, subTitle }) => (
                 </h1>
                 <div className={headerStyles.icons}>
                   <div className={headerStyles.icon}>
-                    <a href="https://www.linkedin.com/in/thebao/">
+                    <a href='https://www.linkedin.com/in/thebao/'>
                       <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                   </div>
                   <div className={headerStyles.icon}>
-                    <a href="https://github.com/methebao">
+                    <a href='https://github.com/methebao'>
                       <FontAwesomeIcon icon={faGithub} />
                     </a>
                   </div>
                   <div className={headerStyles.icon}>
-                    <a href="https://www.facebook.com/thebao2433">
+                    <a href='https://www.facebook.com/thebao2433'>
                       <FontAwesomeIcon icon={faFacebook} />
                     </a>
                   </div>
 
                   <div className={headerStyles.icon}>
-                    <a href="skype:primegods.1s?chat">
+                    <a href='skype:primegods.1s?chat'>
                       <FontAwesomeIcon icon={faSkype} />
                     </a>
                   </div>
                   <div className={headerStyles.icon}>
-                    <a href="mailto:thebao.dev@gmail.com?subject=[FROM_Porfolio]">
+                    <a href='mailto:thebao.dev@gmail.com?subject=[FROM_Porfolio]'>
                       <FontAwesomeIcon icon={faEnvelope} />
                     </a>
                   </div>
@@ -80,7 +80,7 @@ const Header = ({ siteTitle, subTitle }) => (
           <img
             src={rightVector}
             className={headerStyles.rightVector}
-            alt="frontend development"
+            alt='frontend development'
           />
         </div>
       </div>
@@ -95,7 +95,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   siteTitle: `Engage your audiences with modern frontend UI/UX`,
-  subTitle: `by a Professional Frontend Developer`
+  subTitle: `by me - a Professional Frontend Developer`
 };
 
 export default Header;

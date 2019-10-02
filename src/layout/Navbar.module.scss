@@ -24,9 +24,9 @@
 
 .close-icon {
   font-size: $font-size-super-large;
-  color: rgba($info, .7);
+  color: rgba($info, 0.7);
   margin-left: auto;
-  transition: all .2s;
+  transition: all 0.2s;
 
   &:hover {
     color: $primary;
